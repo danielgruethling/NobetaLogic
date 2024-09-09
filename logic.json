@@ -89,7 +89,7 @@
                 },
                 {
                     "name": "Shrine - Underground shortcut",
-                    "rules": "state.has(\"Underground Shortcut Gate\", player)"
+                    "rules": "state.has(\"Shrine Underground Shortcut Gate\", player)"
                 },
                 {
                     "name": "Shrine - After first magic switch",
@@ -130,7 +130,7 @@
             "exits": [
                 {
                     "name": "Shrine - Armor Hall",
-                    "rules": "state.has(\"Underground Shortcut Gate\", player)"
+                    "rules": "state.has(\"Shrine Underground Shortcut Gate\", player)"
                 },
                 {
                     "name": "Underground - Shrine shortcut",
@@ -290,6 +290,12 @@
                     "id": 112,
                     "rules": "state.has(\"Mana Absorption\", player)",
                     "group": "Teleport"
+                },
+                {
+                    "name": "Secret Passage - Defeat Enraged Armor barrier",
+                    "id": 203,
+                    "rules": "state.has(\"Mana Absorption\", player)",
+                    "group": "Barrier"
                 }
             ]
         },
@@ -574,6 +580,13 @@
                     "name": "Underground - After fire",
                     "rules": "state.has(\"Underground Fire Barrier Magic Barrier\", player)"
                 }
+            ],
+            "locations": [
+                {
+                    "name": "Underground - Defeat enemies barrier",
+                    "id": 204,
+                    "group": "Barrier"
+                }
             ]
         },
         {
@@ -662,7 +675,7 @@
                     "group": "Chest"
                 },
                 {
-                    "name": "Lava Ruins - Magic switch at shotgun enemies",
+                    "name": "Lava Ruins - Magic platform switch at shotgun enemies",
                     "id": 78,
                     "group": "Barrier"
                 }
@@ -806,7 +819,6 @@
                 {
                     "name": "Lava Ruins - Monica shortcut switch",
                     "id": 92,
-                    "rules": "state.has(\"Lava Ruins Monica Shortcut Gate\", player)",
                     "group": "Metal Gate"
                 },
                 {
@@ -1840,6 +1852,12 @@
                     "id": 198,
                     "rules": "state.has(\"Fire\", player) or state.has(\"Thunder\", player) or state.has(\"Ice\", player)",
                     "group": "Lore"
+                },
+                {
+                    "name": "Abyss - Lava Ruins trial defeat maids enemy barrier",
+                    "id": 205,
+                    "rules": "state.has(\"Fire\", player) or state.has(\"Thunder\", player) or state.has(\"Ice\", player)",
+                    "group": "Barrier"
                 }
             ]
         },
