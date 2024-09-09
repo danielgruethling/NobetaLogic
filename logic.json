@@ -815,7 +815,7 @@
                     "group": "Lore"
                 },
                 {
-                    "name": "Lava Ruins - 23. Glass Lantern from scissor enemy",
+                    "name": "Lava Ruins - 24. Glass Lantern from scissor enemy",
                     "id": 94,
                     "group": "Lore"
                 }
@@ -864,10 +864,6 @@
             "name": "Lava Ruins - Monica warp",
             "exits": [
                 {
-                    "name": "Lava Ruins - Monica",
-                    "rules": true
-                },
-                {
                     "name": "Lava Ruins - Path to dark tunnel",
                     "rules": "state.has(\"Lava Ruins Monica Warp Gate\")"
                 },
@@ -901,6 +897,11 @@
                     "name": "Lava Ruins - Ice spell chest in corner on path to dark tunnel",
                     "id": 28,
                     "group": "Chest"
+                },
+                {
+                    "name": "Dark Tunnel - 5. Melted Silver Candlestick in front of underground shortcut",
+                    "id": 202,
+                    "group": "Lore"
                 }
             ]
         },
