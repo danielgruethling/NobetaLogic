@@ -100,7 +100,7 @@ def json_to_ap_python(file_path):
 
     for loc_group_name in location_group_map.keys():
         location_name_groups.append(f"    \"{loc_group_name}\": {{")
-        for loc in location_group_map[loc_group_name]:
+        for loc in sorted(location_group_map[loc_group_name]):
             location_name_groups.append(f"        \"{loc}\",")
         location_name_groups.append("    },")
     location_name_groups.append("}\n")
