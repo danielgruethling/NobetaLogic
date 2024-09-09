@@ -21,23 +21,28 @@
             "locations": [
                 {
                     "name": "Shrine - 6. Broken Cross Spear from first ranged Enemy",
-                    "id": 52
+                    "id": 52,
+                    "group": "Lore"
                 },
                 {
                     "name": "Shrine - 1. Crafted Soul Reader from pot in side alcove",
-                    "id": 53
+                    "id": 53,
+                    "group": "Lore"
                 },
                 {
                     "name": "Shrine - Chest at first magic switch barrier",
-                    "id": 0
+                    "id": 0,
+                    "group": "Chest"
                 },
                 {
                     "name": "Shrine - Chest on platform at first magic switch barrier",
-                    "id": 1
+                    "id": 1,
+                    "group": "Chest"
                 },
                 {
                     "name": "Shrine - First magic switch",
-                    "id": 54
+                    "id": 54,
+                    "group": "Barrier"
                 }
             ]
         },
@@ -56,12 +61,14 @@
             "locations": [
                 {
                     "name": "Shrine - 3. Copper Coin in Grand Hall statue barrel",
-                    "id": 55
+                    "id": 55,
+                    "group": "Lore"
                 },
                 {
                     "name": "Shrine - Second magic switch",
                     "id": 56,
-                    "rules": "state.has(\"Arcane\", player) or state.has(\"Thunder\", player)"
+                    "rules": "state.has(\"Arcane\", player) or state.has(\"Thunder\", player)",
+                    "group": "Barrier"
                 }
             ]
         },
@@ -92,24 +99,29 @@
             "locations": [
                 {
                     "name": "Shrine - Chest behind gate",
-                    "id": 2
+                    "id": 2,
+                    "group": "Chest"
                 },
                 {
                     "name": "Shrine - 12. Pointy Witch's Hat in pot at chest behind gate",
-                    "id": 57
+                    "id": 57,
+                    "group": "Lore"
                 },
                 {
                     "name": "Shrine - 7. Deformed Cavalier Armor from Enemy before Central Hall",
-                    "id": 58
+                    "id": 58,
+                    "group": "Lore"
                 },
                 {
                     "name": "Shrine - Specter Armor",
-                    "id": 3
+                    "id": 3,
+                    "group": "Bosses"
                 },
                 {
                     "name": "Shrine - Secret passage magic switch",
                     "id": 99,
-                    "rules": "state.has(\"Fire\", player) or state.has(\"Thunder\", player)"
+                    "rules": "state.has(\"Fire\", player) or state.has(\"Thunder\", player)",
+                    "group": "Barrier"
                 }
             ]
         },
@@ -128,11 +140,13 @@
             "locations": [
                 {
                     "name": "Shrine - Underground shortcut gate switch",
-                    "id": 59
+                    "id": 59,
+                    "group": "Metal Gate"
                 },
                 {
                     "name": "Shrine - 14. Corpse Shroud from pot in Underground shortcut",
-                    "id": 60
+                    "id": 60,
+                    "group": "Lore"
                 }
             ]
         },
@@ -151,24 +165,29 @@
             "locations": [
                 {
                     "name": "Secret Passage - 35. Dwarven Metalwork in pot after first drop",
-                    "id": 100
+                    "id": 100,
+                    "group": "Lore"
                 },
                 {
                     "name": "Secret Passage - 36. High Elf's Mana Ring in pot beside destructible wall",
-                    "id": 101
+                    "id": 101,
+                    "group": "Lore"
                 },
                 {
                     "name": "Secret Passage - 11. Broken Queen Doll from enemy behind destructible wall",
-                    "id": 102
+                    "id": 102,
+                    "group": "Lore"
                 },
                 {
                     "name": "Secret Passage - Absorption spell chest behind destructible wall",
-                    "id": 4
+                    "id": 4,
+                    "group": "Chest"
                 },
                 {
                     "name": "Secret Passage - First fire barrier magic switch",
                     "id": 103,
-                    "rules": "state.has(\"Fire\", player) or state.has(\"Thunder\", player)"
+                    "rules": "state.has(\"Fire\", player) or state.has(\"Thunder\", player)",
+                    "group": "Barrier"
                 }
             ]
         },
@@ -195,36 +214,44 @@
             "locations": [
                 {
                     "name": "Secret Passage - 37. Forest Elf's Vest from enemy before hole in floor",
-                    "id": 104
+                    "id": 104,
+                    "group": "Lore"
                 },
                 {
                     "name": "Secret Passage - Wind spell chest in alcove during fall",
-                    "id": 5
+                    "id": 5,
+                    "group": "Chest"
                 },
                 {
                     "name": "Secret Passage - Ice spell chest behind breakable wall after fall",
-                    "id": 6
+                    "id": 6,
+                    "group": "Chest"
                 },
                 {
                     "name": "Secret Passage - 4. Unknown House Banner from big enemy at spiral stairs",
-                    "id": 106
+                    "id": 106,
+                    "group": "Lore"
                 },
                 {
                     "name": "Secret Passage - Secret area shortcut gate switch",
-                    "id": 107
+                    "id": 107,
+                    "group": "Metal Gate"
                 },
                 {
                     "name": "Secret Passage - Fire spell chest at second fire barrier magic switch",
-                    "id": 7
+                    "id": 7,
+                    "group": "Chest"
                 },
                 {
                     "name": "Secret Passage - Second fire barrier magic switch",
                     "id": 108,
-                    "rules": "state.has(\"Fire\", player) or state.has(\"Thunder\", player)"
+                    "rules": "state.has(\"Fire\", player) or state.has(\"Thunder\", player)",
+                    "group": "Barrier"
                 },
                 {
                     "name": "Secret Passage - 38. Dark Elf's Ear Sample from pot at magic barrier",
-                    "id": 109
+                    "id": 109,
+                    "group": "Lore"
                 }
             ]
         },
@@ -243,22 +270,26 @@
             "locations": [
                 {
                     "name": "Secret Passage - 19. Knight's Halberd from pot before boss",
-                    "id": 110
+                    "id": 110,
+                    "group": "Lore"
                 },
                 {
                     "name": "Secret Passage - Enraged Armor",
                     "id": 9,
-                    "rules": "state.has(\"Mana Absorption\", player)"
+                    "rules": "state.has(\"Mana Absorption\", player)",
+                    "group": "Bosses"
                 },
                 {
                     "name": "Secret Passage - 56. Knight Kingdom Crown from Enraged Armor",
                     "id": 111,
-                    "rules": "state.has(\"Mana Absorption\", player)"
+                    "rules": "state.has(\"Mana Absorption\", player)",
+                    "group": "Lore"
                 },
                 {
                     "name": "Secret Passage - Teleport from Enraged Armor",
                     "id": 112,
-                    "rules": "state.has(\"Mana Absorption\", player)"
+                    "rules": "state.has(\"Mana Absorption\", player)",
+                    "group": "Teleport"
                 }
             ]
         },
@@ -277,15 +308,18 @@
             "locations": [
                 {
                     "name": "Secret Passage - Thunder spell chest after boss",
-                    "id": 8
+                    "id": 8,
+                    "group": "Chest"
                 },
                 {
                     "name": "Secret Passage - Boss shortcut gate switch",
-                    "id": 113
+                    "id": 113,
+                    "group": "Metal Gate"
                 },
                 {
                     "name": "Secret Passage - 13. Sleeve Dagger",
-                    "id": 114
+                    "id": 114,
+                    "group": "Lore"
                 }
             ]
         },
@@ -304,7 +338,8 @@
             "locations": [
                 {
                     "name": "Secret Passage - Dark Tunnel shortcut gate switch",
-                    "id": 105
+                    "id": 105,
+                    "group": "Metal Gate"
                 }
             ]
         },
@@ -319,23 +354,28 @@
             "locations": [
                 {
                     "name": "Underground - 8. Hero's Cross Sword",
-                    "id": 61
+                    "id": 61,
+                    "group": "Lore"
                 },
                 {
                     "name": "Underground - 9. Giant Axe",
-                    "id": 62
+                    "id": 62,
+                    "group": "Lore"
                 },
                 {
                     "name": "Underground - 10. Shield of the Church",
-                    "id": 63
+                    "id": 63,
+                    "group": "Lore"
                 },
                 {
                     "name": "Underground - 97. Faithful Soul Shard",
-                    "id": 64
+                    "id": 64,
+                    "group": "Lore"
                 },
                 {
                     "name": "Underground - Wind spell chest",
-                    "id": 10
+                    "id": 10,
+                    "group": "Chest"
                 }
             ]
         },
@@ -354,41 +394,50 @@
             "locations": [
                 {
                     "name": "Underground - 18. Soul Doll Remnant from first doll enemy",
-                    "id": 65
+                    "id": 65,
+                    "group": "Lore"
                 },
                 {
                     "name": "Underground - Chest in alcove before falling rocks",
-                    "id": 11
+                    "id": 11,
+                    "group": "Chest"
                 },
                 {
                     "name": "Underground - Chest across staircase on backtrack path",
-                    "id": 12
+                    "id": 12,
+                    "group": "Chest"
                 },
                 {
                     "name": "Underground - 2. Stained Ribbon down on glowing rock",
-                    "id": 66
+                    "id": 66,
+                    "group": "Lore"
                 },
                 {
                     "name": "Underground - Arcane chest at bridge jumping puzzle",
                     "id": 13,
-                    "rules": "state.has(\"Wind\", player) or options.less_wind_requirements.value == Toggle.option_true"
+                    "rules": "state.has(\"Wind\", player) or options.less_wind_requirements.value == Toggle.option_true",
+                    "group": "Chest"
                 },
                 {
                     "name": "Underground - Ice spell chest in bottom pit",
-                    "id": 14
+                    "id": 14,
+                    "group": "Chest"
                 },
                 {
                     "name": "Underground - 17. Tattered Maid Outfit from maid enemy",
-                    "id": 67
+                    "id": 67,
+                    "group": "Lore"
                 },
                 {
                     "name": "Underground - Cat absorption hint & gift",
-                    "id": 15
+                    "id": 15,
+                    "group": "Item"
                 },
                 {
                     "name": "Underground - Magic barrier switches at maid enemy",
                     "id": 68,
-                    "rules": "state.has(\"Ice\", player)"
+                    "rules": "state.has(\"Ice\", player)",
+                    "group": "Barrier"
                 }
             ]
         },
@@ -436,7 +485,8 @@
             "locations": [
                 {
                     "name": "Underground - Lava ruins shortcut gate switch",
-                    "id": 71
+                    "id": 71,
+                    "group": "Metal Gate"
                 }
             ]
         },
@@ -472,11 +522,13 @@
             "locations": [
                 {
                     "name": "Underground - 15. Headcutter Circular Saw",
-                    "id": 72
+                    "id": 72,
+                    "group": "Lore"
                 },
                 {
                     "name": "Underground - Tania shortcut switch on statue side",
-                    "id": 73
+                    "id": 73,
+                    "group": "Metal Gate"
                 }
             ]
         },
@@ -495,16 +547,19 @@
             "locations": [
                 {
                     "name": "Underground - 16. Test Subject Manacle from barrel after fire",
-                    "id": 69
+                    "id": 69,
+                    "group": "Lore"
                 },
                 {
                     "name": "Underground - Chest after fire",
-                    "id": 16
+                    "id": 16,
+                    "group": "Chest"
                 },
                 {
                     "name": "Underground - After fire magic switch",
                     "id": 70,
-                    "rules": "state.has(\"Ice\", player)"
+                    "rules": "state.has(\"Ice\", player)",
+                    "group": "Barrier"
                 }
             ]
         },
@@ -541,16 +596,19 @@
                 {
                     "name": "Underground - Tania",
                     "id": 17,
-                    "rules": "state.has(\"Mana Absorption\", player)"
+                    "rules": "state.has(\"Mana Absorption\", player)",
+                    "group": "Bosses"
                 },
                 {
                     "name": "Underground - Tania shortcut switch on Tania side",
-                    "id": 74
+                    "id": 74,
+                    "group": "Metal Gate"
                 },
                 {
                     "name": "Underground - 98. Lost Maiden's Soul Shard from Tania",
                     "id": 75,
-                    "rules": "state.has(\"Mana Absorption\", player)"
+                    "rules": "state.has(\"Mana Absorption\", player)",
+                    "group": "Lore"
                 }
             ]
         },
@@ -569,36 +627,44 @@
             "locations": [
                 {
                     "name": "Lava Ruins - 26. Teddy Bear",
-                    "id": 76
+                    "id": 76,
+                    "group": "Lore"
                 },
                 {
                     "name": "Lava Ruins - 30. Merchant's Ledger from enemy",
-                    "id": 77
+                    "id": 77,
+                    "group": "Lore"
                 },
                 {
                     "name": "Lava Ruins - Chest on scaffolding",
                     "id": 19,
-                    "rules": "state.has(\"Wind\", player) or (options.less_wind_requirements.value == Toggle.option_true and state.has(\"Fire\", player))"
+                    "rules": "state.has(\"Wind\", player) or (options.less_wind_requirements.value == Toggle.option_true and state.has(\"Fire\", player))",
+                    "group": "Chest"
                 },
                 {
                     "name": "Lava Ruins - Chest on left side lava ledge",
-                    "id": 20
+                    "id": 20,
+                    "group": "Chest"
                 },
                 {
                     "name": "Lava Ruins - 29. Slave Branding Iron in barrel after dropping down",
-                    "id": 77
+                    "id": 77,
+                    "group": "Lore"
                 },
                 {
                     "name": "Lava Ruins - Absorption spell chest after dropping down",
-                    "id": 21
+                    "id": 21,
+                    "group": "Chest"
                 },
                 {
                     "name": "Lava Ruins - Chest on right ruins ledge at shotgun enemies magic switch",
-                    "id": 18
+                    "id": 18,
+                    "group": "Chest"
                 },
                 {
                     "name": "Lava Ruins - Magic switch at shotgun enemies",
-                    "id": 78
+                    "id": 78,
+                    "group": "Barrier"
                 }
             ]
         },
@@ -617,35 +683,43 @@
             "locations": [
                 {
                     "name": "Lava Ruins - 27. Fractured Stone Axe from red enemy behind destructible wall",
-                    "id": 79
+                    "id": 79,
+                    "group": "Lore"
                 },
                 {
                     "name": "Lava Ruins - Wind spell chest behind destructible walls",
-                    "id": 22
+                    "id": 22,
+                    "group": "Chest"
                 },
                 {
-                    "name": "Lava Ruins - 20. Weathered cloak in corner on ruins top",
-                    "id": 80
+                    "name": "Lava Ruins - 20. Weathered Cloak in corner on ruins top",
+                    "id": 80,
+                    "group": "Lore"
                 },
                 {
                     "name": "Lava Ruins - 28. Cage on path to starting area shortcut gate",
-                    "id": 81
+                    "id": 81,
+                    "group": "Lore"
                 },
                 {
                     "name": "Lava Ruins - Fake floor shortcut gate switch",
-                    "id": 82
+                    "id": 82,
+                    "group": "Metal Gate"
                 },
                 {
                     "name": "Lava Ruins - Fake floor bait item",
-                    "id": 83
+                    "id": 83,
+                    "group": "Item"
                 },
                 {
                     "name": "Lava Ruins - 23. Cursed Turquoise Necklace from scissor enemy",
-                    "id": 84
+                    "id": 84,
+                    "group": "Lore"
                 },
                 {
                     "name": "Lava Ruins - Defeat scissor enemy barrier",
-                    "id": 85
+                    "id": 85,
+                    "group": "Barrier"
                 }
             ]
         },
@@ -664,28 +738,34 @@
             "locations": [
                 {
                     "name": "Lava Ruins - Lift magic switch at scissor enemy",
-                    "id": 86
+                    "id": 86,
+                    "group": "Barrier"
                 },
                 {
                     "name": "Lava Ruins - 32. Slave Collar from ranged enemy in corner at spewing lava",
-                    "id": 87
+                    "id": 87,
+                    "group": "Lore"
                 },
                 {
                     "name": "Lava Ruins - Chest in spewing lava room",
-                    "id": 23
+                    "id": 23,
+                    "group": "Chest"
                 },
                 {
                     "name": "Lava Ruins - Fire spell chest at double staircase",
-                    "id": 24
+                    "id": 24,
+                    "group": "Chest"
                 },
                 {
                     "name": "Lava Ruins - 31. Slave Tag from pot atop of double staircase",
-                    "id": 88
+                    "id": 88,
+                    "group": "Lore"
                 },
                 {
                     "name": "Lava Ruins - Fire magic switch",
                     "id": 89,
-                    "rules": "state.has(\"Fire\", player) or state.has(\"Thunder\", player)"
+                    "rules": "state.has(\"Fire\", player) or state.has(\"Thunder\", player)",
+                    "group": "Barrier"
                 }
             ]
         },
@@ -704,33 +784,40 @@
             "locations": [
                 {
                     "name": "Lava Ruins - 25. Copper Ingot on path through hole in wall",
-                    "id": 90
+                    "id": 90,
+                    "group": "Lore"
                 },
                 {
                     "name": "Lava Ruins - 22. Intricate Clock from barrel in lava maze",
-                    "id": 91
+                    "id": 91,
+                    "group": "Lore"
                 },
                 {
                     "name": "Lava Ruins - Chest in lava maze",
-                    "id": 25
+                    "id": 25,
+                    "group": "Chest"
                 },
                 {
                     "name": "Lava Ruins - Jumping puzzle arcane chest at moving ring gauntlet",
                     "id": 26,
-                    "rules": "state.has(\"Wind\", player)"
+                    "rules": "state.has(\"Wind\", player)",
+                    "group": "Chest"
                 },
                 {
                     "name": "Lava Ruins - Monica shortcut switch",
                     "id": 92,
-                    "rules": "state.has(\"Lava Ruins Monica Shortcut Gate\", player)"
+                    "rules": "state.has(\"Lava Ruins Monica Shortcut Gate\", player)",
+                    "group": "Metal Gate"
                 },
                 {
                     "name": "Lava Ruins - 21. Silver Coin from barrel at Monica statue",
-                    "id": 93
+                    "id": 93,
+                    "group": "Lore"
                 },
                 {
                     "name": "Lava Ruins - 23. Glass Lantern from scissor enemy",
-                    "id": 94
+                    "id": 94,
+                    "group": "Lore"
                 }
             ]
         },
@@ -750,22 +837,26 @@
                 {
                     "name": "Lava Ruins - Monica",
                     "id": 27,
-                    "rules": "state.has(\"Mana Absorption\", player)"
+                    "rules": "state.has(\"Mana Absorption\", player)",
+                    "group": "Bosses"
                 },
                 {
                     "name": "Lava Ruins - 34. Bestian Ear from Monica",
                     "id": 95,
-                    "rules": "state.has(\"Mana Absorption\", player)"
+                    "rules": "state.has(\"Mana Absorption\", player)",
+                    "group": "Lore"
                 },
                 {
                     "name": "Lava Ruins - 33. Bestian Palm from Monica",
                     "id": 96,
-                    "rules": "state.has(\"Mana Absorption\", player)"
+                    "rules": "state.has(\"Mana Absorption\", player)",
+                    "group": "Lore"
                 },
                 {
                     "name": "Lava Ruins - 99. Child's Soul Shard from Monica",
                     "id": 97,
-                    "rules": "state.has(\"Mana Absorption\", player)"
+                    "rules": "state.has(\"Mana Absorption\", player)",
+                    "group": "Lore"
                 }
             ]
         },
@@ -788,7 +879,8 @@
             "locations": [
                 {
                     "name": "Lava Ruins - Monica warp gate switch",
-                    "id": 98
+                    "id": 98,
+                    "group": "Metal Gate"
                 }
             ]
         },
@@ -807,7 +899,8 @@
             "locations": [
                 {
                     "name": "Lava Ruins - Ice spell chest in corner on path to dark tunnel",
-                    "id": 28
+                    "id": 28,
+                    "group": "Chest"
                 }
             ]
         },
@@ -831,27 +924,33 @@
                 {
                     "name": "Dark Tunnel - 39. Dark Elf's Short Bow from barrel on scaffolding",
                     "id": 115,
-                    "rules": "state.has(\"Wind\", player) or (options.less_wind_requirements.value == Toggle.option_true and state.has(\"Fire\", player))"
+                    "rules": "state.has(\"Wind\", player) or (options.less_wind_requirements.value == Toggle.option_true and state.has(\"Fire\", player))",
+                    "group": "Lore"
                 },
                 {
                     "name": "Dark Tunnel - 43. Bloodstained Javelin from barrel at statue",
-                    "id": 116
+                    "id": 116,
+                    "group": "Lore"
                 },
                 {
                     "name": "Dark Tunnel - 40. Ogre's Kidney from first shield enemy",
-                    "id": 117
+                    "id": 117,
+                    "group": "Lore"
                 },
                 {
                     "name": "Dark Tunnel - 41. Ogre's Eye from first ranged enemy",
-                    "id": 118
+                    "id": 118,
+                    "group": "Lore"
                 },
                 {
                     "name": "Dark Tunnel - 44. Nomad's Cookware from barrel at magic barrier switch",
-                    "id": 119
+                    "id": 119,
+                    "group": "Lore"
                 },
                 {
                     "name": "Dark Tunnel - First magic barrier switch",
-                    "id": 120
+                    "id": 120,
+                    "group": "Barrier"
                 }
             ]
         },
@@ -870,11 +969,13 @@
             "locations": [
                 {
                     "name": "Dark Tunnel - 42. Ogre's Club from shield enemy at gate switch",
-                    "id": 121
+                    "id": 121,
+                    "group": "Lore"
                 },
                 {
                     "name": "Dark Tunnel - First gate switch",
-                    "id": 122
+                    "id": 122,
+                    "group": "Metal Gate"
                 }
             ]
         },
@@ -889,32 +990,39 @@
             "locations": [
                 {
                     "name": "Dark Tunnel - Absorption spell chest hidden behind rubble at staircase",
-                    "id": 29
+                    "id": 29,
+                    "group": "Chest"
                 },
                 {
                     "name": "Dark Tunnel - 45. Golden Coin from first mimic",
                     "id": 123,
-                    "rules": "state.has(\"Fire\", player)"
+                    "rules": "state.has(\"Fire\", player)",
+                    "group": "Lore"
                 },
                 {
                     "name": "Dark Tunnel - Chest at jump from broken staircase",
-                    "id": 31
+                    "id": 31,
+                    "group": "Chest"
                 },
                 {
                     "name": "Dark Tunnel - 46. Tooth Thief's Pouch from barrel at scaffolding",
-                    "id": 124
+                    "id": 124,
+                    "group": "Lore"
                 },
                 {
                     "name": "Dark Tunnel - Wind spell chest in dark hole",
-                    "id": 30
+                    "id": 30,
+                    "group": "Chest"
                 },
                 {
                     "name": "Dark Tunnel - 50. Crafted Soul Injector from pot at light switch after getting the hat",
-                    "id": 125
+                    "id": 125,
+                    "group": "Lore"
                 },
                 {
                     "name": "Dark Tunnel - Light switch after getting the hat",
-                    "id": 126
+                    "id": 126,
+                    "group": "Barrier"
                 }
             ]
         },
@@ -933,39 +1041,47 @@
             "locations": [
                 {
                     "name": "Dark Tunnel - 57. Lady's Feather Hat from puppeteer",
-                    "id": 126
+                    "id": 126,
+                    "group": "Lore"
                 },
                 {
                     "name": "Dark Tunnel - 47. Blood Orc's Skin Sample from barrel above dark maze",
-                    "id": 127
+                    "id": 127,
+                    "group": "Lore"
                 },
                 {
                     "name": "Dark Tunnel - Fire spell chest inside dark maze",
-                    "id": 32
+                    "id": 32,
+                    "group": "Chest"
                 },
                 {
                     "name": "Dark Tunnel - 48. Chief's Skull from right mimic in mimic room",
                     "id": 128,
-                    "rules": "state.has(\"Fire\", player)"
+                    "rules": "state.has(\"Fire\", player)",
+                    "group": "Lore"
                 },
                 {
                     "name": "Dark Tunnel - 49. Chief's Skull from straight mimic in mimic room",
                     "id": 129,
-                    "rules": "state.has(\"Fire\", player)"
+                    "rules": "state.has(\"Fire\", player)",
+                    "group": "Lore"
                 },
                 {
                     "name": "Dark Tunnel - Thunder spell chest in mimic room",
                     "id": 33,
-                    "rules": "state.has(\"Wind\", player) or (options.less_wind_requirements.value == Toggle.option_true and state.has(\"Fire\", player))"
+                    "rules": "state.has(\"Wind\", player) or (options.less_wind_requirements.value == Toggle.option_true and state.has(\"Fire\", player))",
+                    "group": "Chest"
                 },
                 {
                     "name": "Dark Tunnel - 53. Ceremonial Sword from barrel at second statue",
-                    "id": 130
+                    "id": 130,
+                    "group": "Lore"
                 },
                 {
                     "name": "Dark Tunnel - Thunder barrier magic switches",
                     "id": 131,
-                    "rules": "state.has(\"Thunder\", player)"
+                    "rules": "state.has(\"Thunder\", player)",
+                    "group": "Barrier"
                 }
             ]
         },
@@ -984,30 +1100,36 @@
             "locations": [
                 {
                     "name": "Dark Tunnel - 51. Hero's Insignia",
-                    "id": 132
+                    "id": 132,
+                    "group": "Lore"
                 },
                 {
                     "name": "Dark Tunnel - Chest in alcove",
-                    "id": 34
+                    "id": 34,
+                    "group": "Chest"
                 },
                 {
                     "name": "Dark Tunnel - 54. Banner of the Lance Hero from lightning enemy",
-                    "id": 133
+                    "id": 133,
+                    "group": "Lore"
                 },
                 {
                     "name": "Dark Tunnel - Floating platform switch one",
                     "id": 134,
-                    "rules": "state.has(\"Thunder\", player) or state.can_reach(\"Dark Tunnel - After floating platforms\", player)"
+                    "rules": "state.has(\"Thunder\", player) or state.can_reach(\"Dark Tunnel - After floating platforms\", player)",
+                    "group": "Barrier"
                 },
                 {
                     "name": "Dark Tunnel - Floating platform switch two",
                     "id": 135,
-                    "rules": "state.has(\"Thunder\", player) or state.can_reach(\"Dark Tunnel - After floating platforms\", player)"
+                    "rules": "state.has(\"Thunder\", player) or state.can_reach(\"Dark Tunnel - After floating platforms\", player)",
+                    "group": "Barrier"
                 },
                 {
                     "name": "Dark Tunnel - Floating platform switch three",
                     "id": 136,
-                    "rules": "state.has(\"Thunder\", player) or state.can_reach(\"Dark Tunnel - After floating platforms\", player)"
+                    "rules": "state.has(\"Thunder\", player) or state.can_reach(\"Dark Tunnel - After floating platforms\", player)",
+                    "group": "Barrier"
                 }
             ]
         },
@@ -1026,7 +1148,8 @@
             "locations": [
                 {
                     "name": "Dark Tunnel - Chest on left side after floating platforms",
-                    "id": 35
+                    "id": 35,
+                    "group": "Chest"
                 }
             ]
         },
@@ -1045,54 +1168,65 @@
             "locations": [
                 {
                     "name": "Dark Tunnel - Arcane spell chest on collapsed bridge",
-                    "id": 36
+                    "id": 36,
+                    "group": "Chest"
                 },
                 {
                     "name": "Dark Tunnel - 52. Mutated Beast Claw from pot in big hall",
-                    "id": 137
+                    "id": 137,
+                    "group": "Lore"
                 },
                 {
                     "name": "Dark Tunnel - 69. Pontiff's Scepter from singular barrel in side room",
-                    "id": 138
+                    "id": 138,
+                    "group": "Lore"
                 },
                 {
                     "name": "Dark Tunnel - 71. Apocalypse Knight Record from knight enemy",
                     "id": 139,
-                    "rules": "state.has(\"Wind\", player) or (options.less_wind_requirements.value == Toggle.option_true and state.has(\"Fire\", player))"
+                    "rules": "state.has(\"Wind\", player) or (options.less_wind_requirements.value == Toggle.option_true and state.has(\"Fire\", player))",
+                    "group": "Lore"
                 },
                 {
                     "name": "Dark Tunnel - 103. Loyal Soul Shard from knight enemy",
                     "id": 140,
-                    "rules": "state.has(\"Wind\", player) or (options.less_wind_requirements.value == Toggle.option_true and state.has(\"Fire\", player))"
+                    "rules": "state.has(\"Wind\", player) or (options.less_wind_requirements.value == Toggle.option_true and state.has(\"Fire\", player))",
+                    "group": "Lore"
                 },
                 {
                     "name": "Dark Tunnel - Chest after knight enemy",
                     "id": 37,
-                    "rules": "state.has(\"Wind\", player) or (options.less_wind_requirements.value == Toggle.option_true and state.has(\"Fire\", player))"
+                    "rules": "state.has(\"Wind\", player) or (options.less_wind_requirements.value == Toggle.option_true and state.has(\"Fire\", player))",
+                    "group": "Chest"
                 },
                 {
                     "name": "Dark Tunnel - 65. Declaration of War from barrel at statue",
-                    "id": 141
+                    "id": 141,
+                    "group": "Lore"
                 },
                 {
                     "name": "Dark Tunnel - Vanessa",
                     "id": 38,
-                    "rules": "state.has(\"Mana Absorption\", player)"
+                    "rules": "state.has(\"Mana Absorption\", player)",
+                    "group": "Bosses"
                 },
                 {
                     "name": "Dark Tunnel - 100. King's Final Honor from Vanessa",
                     "id": 142,
-                    "rules": "state.has(\"Mana Absorption\", player)"
+                    "rules": "state.has(\"Mana Absorption\", player)",
+                    "group": "Lore"
                 },
                 {
                     "name": "Dark Tunnel - 78. Ancient Throne Rune from Vanessa",
                     "id": 143,
-                    "rules": "state.has(\"Mana Absorption\", player)"
+                    "rules": "state.has(\"Mana Absorption\", player)",
+                    "group": "Lore"
                 },
                 {
                     "name": "Dark Tunnel - 77. The Throne from Vanessa",
                     "id": 144,
-                    "rules": "state.has(\"Mana Absorption\", player)"
+                    "rules": "state.has(\"Mana Absorption\", player)",
+                    "group": "Lore"
                 }
             ]
         },
@@ -1107,31 +1241,38 @@
             "locations": [
                 {
                     "name": "Spirit Realm - 72. Apocalypse Knight Shield from crystal at statue",
-                    "id": 145
+                    "id": 145,
+                    "group": "Lore"
                 },
                 {
                     "name": "Spirit Realm - 73. Apocalypse Knight Axe from enemy in trapped barrel",
-                    "id": 146
+                    "id": 146,
+                    "group": "Lore"
                 },
                 {
                     "name": "Spirit Realm - 79. Doctor's Mask hidden on ledge",
-                    "id": 147
+                    "id": 147,
+                    "group": "Lore"
                 },
                 {
                     "name": "Spirit Realm - Wind spell chest inside roof hole",
-                    "id": 39
+                    "id": 39,
+                    "group": "Chest"
                 },
                 {
                     "name": "Spirit Realm - Wind spell chest gate switch",
-                    "id": 148
+                    "id": 148,
+                    "group": "Metal Gate"
                 },
                 {
                     "name": "Spirit Realm - 55. Banner of the Lionhearted from crystal in doorway",
-                    "id": 149
+                    "id": 149,
+                    "group": "Lore"
                 },
                 {
                     "name": "Spirit Realm - 75. Apocalypse Knight Bow from bow enemy",
-                    "id": 150
+                    "id": 150,
+                    "group": "Lore"
                 }
             ]
         },
@@ -1154,42 +1295,51 @@
             "locations": [
                 {
                     "name": "Spirit Realm - 61. Knight Kingdom Entry Pass from sword enemy",
-                    "id": 151
+                    "id": 151,
+                    "group": "Lore"
                 },
                 {
                     "name": "Spirit Realm - 58. Super Cleanser Soap from crystal on path",
-                    "id": 152
+                    "id": 152,
+                    "group": "Lore"
                 },
                 {
                     "name": "Spirit Realm - Chest hidden in dropdown alcove",
-                    "id": 40
+                    "id": 40,
+                    "group": "Chest"
                 },
                 {
                     "name": "Spirit Realm - 63. Inquisitor's List from crystal at second statue",
-                    "id": 153
+                    "id": 153,
+                    "group": "Lore"
                 },
                 {
                     "name": "Spirit Realm - Ice spell chest in right side alcove",
                     "id": 41,
-                    "rules": "state.has(\"Wind\", player)"
+                    "rules": "state.has(\"Wind\", player)",
+                    "group": "Chest"
                 },
                 {
                     "name": "Spirit Realm - Ice spell chest gate switch in right side alcove",
                     "id": 154,
-                    "rules": "state.has(\"Wind\", player)"
+                    "rules": "state.has(\"Wind\", player)",
+                    "group": "Metal Gate"
                 },
                 {
                     "name": "Spirit Realm - 76. Apocalypse Knight Sword from enemy",
-                    "id": 155
+                    "id": 155,
+                    "group": "Lore"
                 },
                 {
                     "name": "Spirit Realm - 74. Apocalypse Knight Staff from enemy",
-                    "id": 156
+                    "id": 156,
+                    "group": "Lore"
                 },
                 {
                     "name": "Spirit Realm - Arcane barrier magic switches",
                     "id": 157,
-                    "rules": "state.has(\"Arcane\", player)"
+                    "rules": "state.has(\"Arcane\", player)",
+                    "group": "Barrier"
                 }
             ]
         },
@@ -1208,20 +1358,24 @@
             "locations": [
                 {
                     "name": "Spirit Realm - Thunder spell chest behind breakable wall",
-                    "id": 42
+                    "id": 42,
+                    "group": "Chest"
                 },
                 {
                     "name": "Spirit Realm - 86. Missing Person Poster on bridge",
-                    "id": 158
+                    "id": 158,
+                    "group": "Lore"
                 },
                 {
                     "name": "Spirit Realm - Platform shortcut switch",
                     "id": 159,
-                    "rules": "state.has(\"Fire\", player) and state.has(\"Thunder\", player)"
+                    "rules": "state.has(\"Fire\", player) and state.has(\"Thunder\", player)",
+                    "group": "Barrier"
                 },
                 {
                     "name": "Spirit Realm - 59. Exquisite Leather Lamp from crystal before Seal",
-                    "id": 160
+                    "id": 160,
+                    "group": "Lore"
                 }
             ]
         },
@@ -1236,23 +1390,28 @@
             "locations": [
                 {
                     "name": "Spirit Realm - 66. Attic Key from crystal at first Seal phase",
-                    "id": 161
+                    "id": 161,
+                    "group": "Lore"
                 },
                 {
                     "name": "Spirit Realm - 64. Envoy's Rune from crystal at first Seal phase",
-                    "id": 162
+                    "id": 162,
+                    "group": "Lore"
                 },
                 {
                     "name": "Spirit Realm - 60. Premium Grass Ash from crystal at first Seal phase",
-                    "id": 163
+                    "id": 163,
+                    "group": "Lore"
                 },
                 {
                     "name": "Spirit Realm - 62. Bone Chess Set from crystal at first Seal phase",
-                    "id": 164
+                    "id": 164,
+                    "group": "Lore"
                 },
                 {
                     "name": "Spirit Realm - First Seal magic barrier",
-                    "id": 165
+                    "id": 165,
+                    "group": "Barrier"
                 }
             ]
         },
@@ -1271,15 +1430,18 @@
             "locations": [
                 {
                     "name": "Spirit Realm - 90. Enchanted Shackles from second Seal phase",
-                    "id": 166
+                    "id": 166,
+                    "group": "Lore"
                 },
                 {
                     "name": "Spirit Realm - Fire spell chest at second Seal phase",
-                    "id": 43
+                    "id": 43,
+                    "group": "Chest"
                 },
                 {
                     "name": "Spirit Realm - Second Seal magic barrier",
-                    "id": 167
+                    "id": 167,
+                    "group": "Barrier"
                 }
             ]
         },
@@ -1302,19 +1464,23 @@
             "locations": [
                 {
                     "name": "Spirit Realm - 87. Saint's Cane from crystal at third statue",
-                    "id": 168
+                    "id": 168,
+                    "group": "Lore"
                 },
                 {
                     "name": "Spirit Realm - Statue shortcut gate switch",
-                    "id": 169
+                    "id": 169,
+                    "group": "Metal Gate"
                 },
                 {
-                    "name": "Spirit Realm - 67. Halfling#s Forelimb from crystal at elevator magic switch",
-                    "id": 170
+                    "name": "Spirit Realm - 67. Halfling's Forelimb from crystal at elevator magic switch",
+                    "id": 170,
+                    "group": "Lore"
                 },
                 {
                     "name": "Spirit Realm - Elevator magic switch",
-                    "id": 171
+                    "id": 171,
+                    "group": "Barrier"
                 }
             ]
         },
@@ -1333,26 +1499,31 @@
             "locations": [
                 {
                     "name": "Spirit Realm - 68. Ratian Claw from crystal after elevator",
-                    "id": 172
+                    "id": 172,
+                    "group": "Lore"
                 },
                 {
                     "name": "Spirit Realm - Absorption spell chest behind crystals after elevator",
-                    "id": 44
+                    "id": 44,
+                    "group": "Chest"
                 },
                 {
                     "name": "Spirit Realm - Fire control magic switch",
                     "id": 173,
-                    "rules": "state.has(\"Ice\", player) or state.has(\"Thunder\", player) or state.has(\"Spirit Realm Fire Deactivation\", player)"
+                    "rules": "state.has(\"Ice\", player) or state.has(\"Thunder\", player) or state.has(\"Spirit Realm Fire Deactivation\", player)",
+                    "group": "Barrier"
                 },
                 {
                     "name": "Spirit Realm - Magic switch barrier switch",
                     "id": 174,
-                    "rules": "state.has(\"Spirit Realm Fire Deactivation\", player)"
+                    "rules": "state.has(\"Spirit Realm Fire Deactivation\", player)",
+                    "group": "Barrier"
                 },
                 {
                     "name": "Spirit Realm - Teleporter magic switch",
                     "id": 175,
-                    "rules": "(state.has(\"Spirit Realm Magic Switch Barrier\", player) or (options.barrier_rando.value == Toggle.option_false and state.has(\"Thunder\", player))) or state.has(\"Fire\", player)"
+                    "rules": "(state.has(\"Spirit Realm Magic Switch Barrier\", player) or (options.barrier_rando.value == Toggle.option_false and state.has(\"Thunder\", player))) or state.has(\"Fire\", player)",
+                    "group": "Barrier"
                 }
             ]
         },
@@ -1371,30 +1542,36 @@
             "locations": [
                 {
                     "name": "Spirit Realm - 70. Abandoned Rag Doll from crystal on spiral stairs",
-                    "id": 176
+                    "id": 176,
+                    "group": "Lore"
                 },
                 {
                     "name": "Spirit Realm - Chest before boss behind breakable wall",
-                    "id": 45
+                    "id": 45,
+                    "group": "Chest"
                 },
                 {
                     "name": "Spirit Realm - 89. Bloodstained Key at statue before boss",
-                    "id": 177
+                    "id": 177,
+                    "group": "Lore"
                 },
                 {
                     "name": "Spirit Realm - Vanessa V2",
                     "id": 46,
-                    "rules": "state.has(\"Mana Absorption\", player)"
+                    "rules": "state.has(\"Mana Absorption\", player)",
+                    "group": "Bosses"
                 },
                 {
                     "name": "Spirit Realm - 101. Proud King's Crafted Soul Shard from Vanessa V2",
                     "id": 178,
-                    "rules": "state.has(\"Mana Absorption\", player)"
+                    "rules": "state.has(\"Mana Absorption\", player)",
+                    "group": "Lore"
                 },
                 {
                     "name": "Spirit Realm - Thunder spell from Vanessa V2",
                     "id": 179,
-                    "rules": "state.has(\"Mana Absorption\", player)"
+                    "rules": "state.has(\"Mana Absorption\", player)",
+                    "group": "Item"
                 }
             ]
         },
@@ -1409,7 +1586,8 @@
             "locations": [
                 {
                     "name": "Abyss - 80. Ceremonial Incense at first statue",
-                    "id": 180
+                    "id": 180,
+                    "group": "Lore"
                 }
             ]
         },
@@ -1424,7 +1602,8 @@
             "locations": [
                 {
                     "name": "Abyss - First gate switch",
-                    "id": 181
+                    "id": 181,
+                    "group": "Metal Gate"
                 }
             ]
         },
@@ -1443,24 +1622,29 @@
             "locations": [
                 {
                     "name": "Abyss - 81. Moonlight Blade from trapped barrel",
-                    "id": 182
+                    "id": 182,
+                    "group": "Lore"
                 },
                 {
                     "name": "Abyss - 83. Castle Blueprint from crystal on brittle ledge",
                     "id": 184,
-                    "rules": "state.has(\"Wind\", player)"
+                    "rules": "state.has(\"Wind\", player)",
+                    "group": "Lore"
                 },
                 {
                     "name": "Abyss - Arcane spell chest on pillar",
-                    "id": 48
+                    "id": 48,
+                    "group": "Chest"
                 },
                 {
                     "name": "Abyss - 84. Witch Worshipper Puppet from pot right of pillars",
-                    "id": 185
+                    "id": 185,
+                    "group": "Lore"
                 },
                 {
                     "name": "Abyss - Giant maid barrier",
-                    "id": 186
+                    "id": 186,
+                    "group": "Barrier"
                 }
             ]
         },
@@ -1475,11 +1659,13 @@
             "locations": [
                 {
                     "name": "Abyss - 82. Prostitute's Chiffon from crystal in left trap gate",
-                    "id": 183
+                    "id": 183,
+                    "group": "Lore"
                 },
                 {
                     "name": "Abyss - Chest in left trap gate",
-                    "id": 47
+                    "id": 47,
+                    "group": "Chest"
                 }
             ]
         },
@@ -1494,7 +1680,8 @@
             "locations": [
                 {
                     "name": "Abyss - 85. Polymorphism Scroll from crystal behind gate",
-                    "id": 187
+                    "id": 187,
+                    "group": "Lore"
                 }
             ]
         },
@@ -1521,7 +1708,8 @@
             "locations": [
                 {
                     "name": "Abyss - 88. Hero Summon Rune in front of statue",
-                    "id": 188
+                    "id": 188,
+                    "group": "Lore"
                 }
             ]
         },
@@ -1536,22 +1724,26 @@
             "locations": [
                 {
                     "name": "Abyss - Fire Spell chest underground trial",
-                    "id": 49
+                    "id": 49,
+                    "group": "Chest"
                 },
                 {
                     "name": "Abyss - Underground trial magic switch",
                     "id": 189,
-                    "rules": "state.has(\"Fire\", player) or state.has(\"Thunder\", player)"
+                    "rules": "state.has(\"Fire\", player) or state.has(\"Thunder\", player)",
+                    "group": "Barrier"
                 },
                 {
                     "name": "Abyss - 91. Gaseous Soul Essence from scissor enemy in underground trial",
                     "id": 190,
-                    "rules": "state.has(\"Fire\", player) or state.has(\"Thunder\", player)"
+                    "rules": "state.has(\"Fire\", player) or state.has(\"Thunder\", player)",
+                    "group": "Lore"
                 },
                 {
                     "name": "Abyss - Underground trial scissor enemy magic gate",
                     "id": 191,
-                    "rules": "state.has(\"Fire\", player) or state.has(\"Thunder\", player)"
+                    "rules": "state.has(\"Fire\", player) or state.has(\"Thunder\", player)",
+                    "group": "Barrier"
                 }
             ]
         },
@@ -1567,11 +1759,13 @@
                 {
                     "name": "Abyss - Underground trial magic switch",
                     "id": 192,
-                    "rules": "state.has(\"Fire\", player) or state.has(\"Thunder\", player)"
+                    "rules": "state.has(\"Fire\", player) or state.has(\"Thunder\", player)",
+                    "group": "Barrier"
                 },
                 {
                     "name": "Abyss - 92. Semi-gaseous Soul Essence in front of underground trial magic switch",
-                    "id": 193
+                    "id": 193,
+                    "group": "Lore"
                 }
             ]
         },
@@ -1587,17 +1781,20 @@
                 {
                     "name": "Abyss - Thunder spell chest dark tunnel trial",
                     "id": 51,
-                    "rules": "state.has(\"Wind\", player) or options.less_wind_requirements.value == Toggle.option_true"
+                    "rules": "state.has(\"Wind\", player) or options.less_wind_requirements.value == Toggle.option_true",
+                    "group": "Chest"
                 },
                 {
                     "name": "Abyss - 95. Refined Soul Shard from maid enemy in dark tunnel trial",
                     "id": 195,
-                    "rules": "state.has(\"Thunder\", player)"
+                    "rules": "state.has(\"Thunder\", player)",
+                    "group": "Lore"
                 },
                 {
                     "name": "Abyss - Dark tunnel trial maid enemy barrier",
                     "id": 196,
-                    "rules": "state.has(\"Thunder\", player)"
+                    "rules": "state.has(\"Thunder\", player)",
+                    "group": "Barrier"
                 }
             ]
         },
@@ -1613,11 +1810,13 @@
                 {
                     "name": "Abyss - Dark Tunnel trial magic switch",
                     "id": 194,
-                    "rules": "state.has(\"Fire\", player) or state.has(\"Thunder\", player)"
+                    "rules": "state.has(\"Fire\", player) or state.has(\"Thunder\", player)",
+                    "group": "Barrier"
                 },
                 {
                     "name": "Abyss - 96. Knight's Soul Shard in front of dark tunnel trial magic switch",
-                    "id": 197
+                    "id": 197,
+                    "group": "Lore"
                 }
             ]
         },
@@ -1632,12 +1831,14 @@
             "locations": [
                 {
                     "name": "Abyss - Ice spell chest lava ruins trial",
-                    "id": 50
+                    "id": 50,
+                    "group": "Chest"
                 },
                 {
                     "name": "Abyss - 93. Enchanted Soul Shard from maid enemy in lava ruins trial",
                     "id": 198,
-                    "rules": "state.has(\"Fire\", player) or state.has(\"Thunder\", player) or state.has(\"Ice\", player)"
+                    "rules": "state.has(\"Fire\", player) or state.has(\"Thunder\", player) or state.has(\"Ice\", player)",
+                    "group": "Lore"
                 }
             ]
         },
@@ -1653,11 +1854,13 @@
                 {
                     "name": "Abyss - Lava Ruins trial magic switch",
                     "id": 199,
-                    "rules": "state.has(\"Fire\", player) or state.has(\"Thunder\", player)"
+                    "rules": "state.has(\"Fire\", player) or state.has(\"Thunder\", player)",
+                    "group": "Barrier"
                 },
                 {
                     "name": "Abyss - 94. Knight's Soul Shard in front of lava ruins trial magic switch",
-                    "id": 200
+                    "id": 200,
+                    "group": "Lore"
                 }
             ]
         },
@@ -1668,11 +1871,13 @@
                 {
                     "name": "Abyss - 102. Lost Maiden's Crafted Soul Shard from Nonota",
                     "id": 201,
-                    "rules": "state.has(\"Mana Absorption\", player)"
+                    "rules": "state.has(\"Mana Absorption\", player)",
+                    "group": "Lore"
                 },
                 {
                     "name": "Abyss - Nonota",
-                    "rules": "state.has(\"Mana Absorption\", player)"
+                    "rules": "state.has(\"Mana Absorption\", player)",
+                    "group": "Event"
                 }
             ]
         }

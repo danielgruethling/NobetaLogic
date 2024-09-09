@@ -1,6 +1,7 @@
 import sys
 import json
 import re
+from typing import Dict, Set
 
 
 def json_to_ap_python(file_path):
@@ -17,6 +18,21 @@ def json_to_ap_python(file_path):
     lwn_locations = [
         "lwn_locations: Dict[str, int] = {",
     ]
+
+    location_name_groups = [
+        "location_name_groups = {",
+    ]
+
+    location_group_map: Dict[str, Set[str]] = {
+        "Bosses": set(),
+        "Lore": set(),
+        "Item": set(),
+        "Chest": set(),
+        "Metal Gate": set(),
+        "Barrier": set(),
+        "Teleport": set(),
+        "Event": set(),
+    }
 
     # Generate regions.py
     regions_code = [
@@ -60,6 +76,8 @@ def json_to_ap_python(file_path):
                 if 'rules' in location:
                     location_rules.append(f"    set_rule(multiworld.get_location(\"{location['name']}\", player),")
                     location_rules.append(f"             lambda state: {location['rules']})")
+                if 'group' in location:
+                    location_group_map[location['group']].add(location['name'])
             locations_code.append("}\n")
 
         lwn_region = f"    \"{region['name']}\": "
@@ -79,6 +97,16 @@ def json_to_ap_python(file_path):
 
     locations_code.append('\n'.join(lwn_locations))
     locations_code.append("}\n")
+
+    for loc_group_name in location_group_map.keys():
+        location_name_groups.append(f"    \"{loc_group_name}\": {{")
+        for loc in location_group_map[loc_group_name]:
+            location_name_groups.append(f"        \"{loc}\",")
+        location_name_groups.append("    },")
+    location_name_groups.append("}\n")
+
+    locations_code.append('\n'.join(location_name_groups))
+
     regions_code.append('\n'.join(lwn_regions))
     regions_code.append("}\n")
 
