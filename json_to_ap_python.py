@@ -49,10 +49,21 @@ def json_to_ap_python(file_path):
     # Generate rules.py
     rules_code = [
         "from typing import TYPE_CHECKING\n",
-        "from .options import LWNOptions, Toggle",
+        "from .options import Toggle",
         "from worlds.generic.Rules import set_rule",
+        "from BaseClasses import CollectionState\n"
         "if TYPE_CHECKING:",
         "    from . import LWNWorld\n\n\n"
+        "def has_fire_or_thunder(state: CollectionState, player: int) -> bool:\n"
+        "    return state.has_any([\"Fire\", \"Thunder\"], player)\n\n\n"
+        "def has_wind_or_skip(state: CollectionState, player: int, world: \"LWNWorld\") -> bool:\n"
+        "    return (state.has(\"Wind\", player) or\n"
+        "            world.options.wind_requirements.value == world.options.wind_requirements.option_less_wind_requirements)\n"
+        "\n\n"
+        "def has_wind_or_damage_boost(state: CollectionState, player: int, world: \"LWNWorld\") -> bool:\n"
+        "    return (state.has(\"Wind\", player) or\n"
+        "            (world.options.wind_requirements.value == world.options.wind_requirements.option_less_wind_requirements and \n"
+        "            state.has(\"Fire\", player)))\n\n\n"
         "def set_region_rules(world: \"LWNWorld\") -> None:\n"
         "    multiworld = world.multiworld\n"
         "    player = world.player\n"

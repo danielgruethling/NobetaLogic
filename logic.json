@@ -120,7 +120,7 @@
                 {
                     "name": "Shrine - Secret passage magic switch",
                     "id": 99,
-                    "rules": "state.has(\"Fire\", player) or state.has(\"Thunder\", player)",
+                    "rules": "has_fire_or_thunder(state, player)",
                     "group": "Barrier"
                 }
             ]
@@ -186,7 +186,7 @@
                 {
                     "name": "Secret Passage - First fire barrier magic switch",
                     "id": 103,
-                    "rules": "state.has(\"Fire\", player) or state.has(\"Thunder\", player)",
+                    "rules": "has_fire_or_thunder(state, player)",
                     "group": "Barrier"
                 }
             ]
@@ -245,7 +245,7 @@
                 {
                     "name": "Secret Passage - Second fire barrier magic switch",
                     "id": 108,
-                    "rules": "state.has(\"Fire\", player) or state.has(\"Thunder\", player)",
+                    "rules": "has_fire_or_thunder(state, player)",
                     "group": "Barrier"
                 },
                 {
@@ -354,7 +354,7 @@
             "exits": [
                 {
                     "name": "Underground - After wind",
-                    "rules": "state.has(\"Wind\", player) or options.less_wind_requirements.value == Toggle.option_true"
+                    "rules": "has_wind_or_skip(state, player, world)"
                 }
             ],
             "locations": [
@@ -421,7 +421,7 @@
                 {
                     "name": "Underground - Arcane chest at bridge jumping puzzle",
                     "id": 13,
-                    "rules": "state.has(\"Wind\", player) or options.less_wind_requirements.value == Toggle.option_true",
+                    "rules": "has_wind_or_skip(state, player, world)",
                     "group": "Chest"
                 },
                 {
@@ -651,7 +651,7 @@
                 {
                     "name": "Lava Ruins - Chest on scaffolding",
                     "id": 19,
-                    "rules": "state.has(\"Wind\", player) or (options.less_wind_requirements.value == Toggle.option_true and state.has(\"Fire\", player))",
+                    "rules": "has_wind_or_damage_boost(state, player, world)",
                     "group": "Chest"
                 },
                 {
@@ -777,7 +777,7 @@
                 {
                     "name": "Lava Ruins - Fire magic switch",
                     "id": 89,
-                    "rules": "state.has(\"Fire\", player) or state.has(\"Thunder\", player)",
+                    "rules": "has_fire_or_thunder(state, player)",
                     "group": "Barrier"
                 }
             ]
@@ -791,7 +791,7 @@
                 },
                 {
                     "name": "Lava Ruins - Monica",
-                    "rules": "state.has(\"Wind\", player) or (options.less_wind_requirements.value == Toggle.option_true and state.has(\"Fire\", player))"
+                    "rules": "has_wind_or_damage_boost(state, player, world)"
                 }
             ],
             "locations": [
@@ -937,7 +937,7 @@
                 {
                     "name": "Dark Tunnel - 39. Dark Elf's Short Bow from barrel on scaffolding",
                     "id": 115,
-                    "rules": "state.has(\"Wind\", player) or (options.less_wind_requirements.value == Toggle.option_true and state.has(\"Fire\", player))",
+                    "rules": "has_wind_or_damage_boost(state, player, world)",
                     "group": "Lore"
                 },
                 {
@@ -1082,7 +1082,7 @@
                 {
                     "name": "Dark Tunnel - Thunder spell chest in mimic room",
                     "id": 33,
-                    "rules": "state.has(\"Wind\", player) or (options.less_wind_requirements.value == Toggle.option_true and state.has(\"Fire\", player))",
+                    "rules": "has_wind_or_damage_boost(state, player, world)",
                     "group": "Chest"
                 },
                 {
@@ -1197,19 +1197,19 @@
                 {
                     "name": "Dark Tunnel - 71. Apocalypse Knight Record from knight enemy",
                     "id": 139,
-                    "rules": "state.has(\"Wind\", player) or (options.less_wind_requirements.value == Toggle.option_true and state.has(\"Fire\", player))",
+                    "rules": "has_wind_or_damage_boost(state, player, world)",
                     "group": "Lore"
                 },
                 {
                     "name": "Dark Tunnel - 103. Loyal Soul Shard from knight enemy",
                     "id": 140,
-                    "rules": "state.has(\"Wind\", player) or (options.less_wind_requirements.value == Toggle.option_true and state.has(\"Fire\", player))",
+                    "rules": "has_wind_or_damage_boost(state, player, world)",
                     "group": "Lore"
                 },
                 {
                     "name": "Dark Tunnel - Chest after knight enemy",
                     "id": 37,
-                    "rules": "state.has(\"Wind\", player) or (options.less_wind_requirements.value == Toggle.option_true and state.has(\"Fire\", player))",
+                    "rules": "has_wind_or_damage_boost(state, player, world)",
                     "group": "Chest"
                 },
                 {
@@ -1743,19 +1743,19 @@
                 {
                     "name": "Abyss - Underground trial magic switch",
                     "id": 189,
-                    "rules": "state.has(\"Fire\", player) or state.has(\"Thunder\", player)",
+                    "rules": "has_fire_or_thunder(state, player)",
                     "group": "Barrier"
                 },
                 {
                     "name": "Abyss - 91. Gaseous Soul Essence from scissor enemy in underground trial",
                     "id": 190,
-                    "rules": "state.has(\"Fire\", player) or state.has(\"Thunder\", player)",
+                    "rules": "has_fire_or_thunder(state, player)",
                     "group": "Lore"
                 },
                 {
                     "name": "Abyss - Underground trial scissor enemy magic gate",
                     "id": 191,
-                    "rules": "state.has(\"Fire\", player) or state.has(\"Thunder\", player)",
+                    "rules": "has_fire_or_thunder(state, player)",
                     "group": "Barrier"
                 }
             ]
@@ -1772,7 +1772,7 @@
                 {
                     "name": "Abyss - Underground trial magic switch",
                     "id": 192,
-                    "rules": "state.has(\"Fire\", player) or state.has(\"Thunder\", player)",
+                    "rules": "has_fire_or_thunder(state, player)",
                     "group": "Barrier"
                 },
                 {
@@ -1794,7 +1794,7 @@
                 {
                     "name": "Abyss - Thunder spell chest dark tunnel trial",
                     "id": 51,
-                    "rules": "state.has(\"Wind\", player) or options.less_wind_requirements.value == Toggle.option_true",
+                    "rules": "has_wind_or_skip(state, player, world)",
                     "group": "Chest"
                 },
                 {
@@ -1823,7 +1823,7 @@
                 {
                     "name": "Abyss - Dark Tunnel trial magic switch",
                     "id": 194,
-                    "rules": "state.has(\"Fire\", player) or state.has(\"Thunder\", player)",
+                    "rules": "has_fire_or_thunder(state, player)",
                     "group": "Barrier"
                 },
                 {
@@ -1850,13 +1850,13 @@
                 {
                     "name": "Abyss - 93. Enchanted Soul Shard from maid enemy in lava ruins trial",
                     "id": 198,
-                    "rules": "state.has(\"Fire\", player) or state.has(\"Thunder\", player) or state.has(\"Ice\", player)",
+                    "rules": "has_fire_or_thunder(state, player) or state.has(\"Ice\", player)",
                     "group": "Lore"
                 },
                 {
                     "name": "Abyss - Lava Ruins trial defeat maids enemy barrier",
                     "id": 205,
-                    "rules": "state.has(\"Fire\", player) or state.has(\"Thunder\", player) or state.has(\"Ice\", player)",
+                    "rules": "has_fire_or_thunder(state, player) or state.has(\"Ice\", player)",
                     "group": "Barrier"
                 }
             ]
@@ -1873,7 +1873,7 @@
                 {
                     "name": "Abyss - Lava Ruins trial magic switch",
                     "id": 199,
-                    "rules": "state.has(\"Fire\", player) or state.has(\"Thunder\", player)",
+                    "rules": "has_fire_or_thunder(state, player)",
                     "group": "Barrier"
                 },
                 {
