@@ -11,12 +11,12 @@ def json_to_ap_python(file_path):
 
     # Generate locations.py
     locations_code = [
-        "from typing import Dict\n",
+        "from typing import Dict, Set, Any\n",
         "base_id = 345600000\n"
     ]
 
     lwn_locations = [
-        "lwn_locations: Dict[str, int] = {",
+        "lwn_locations: Dict[str, Any] = {",
     ]
 
     location_name_groups = [
@@ -76,14 +76,14 @@ def json_to_ap_python(file_path):
         if 'locations' in region and region['locations']:
             region_locations = re.sub(r'_+', '_', region['name'].replace(' ', '_').replace('-', '_')
                                       .replace('.', '').lower() + "_locations")
-            lwn_locations.append(f"    **{region_locations},")
-            region_locations += ": Dict[str, int] = {"
+            lwn_locations.append(f"    **dict.fromkeys({region_locations}, None),")
+            region_locations += ": Set[str] = {"
             locations_code.append(f"{region_locations}")
             for location in region['locations']:
                 if 'id' in location and 'name' in location:
-                    locations_code.append(f"    \"{location['name']}\": base_id + {location['id']},")
+                    locations_code.append(f"    \"{location['name']}\",")
                 else:
-                    locations_code.append(f"    \"{location['name']}\": None,")
+                    locations_code.append(f"    \"{location['name']}\",")
                 if 'rules' in location:
                     location_rules.append(f"    set_rule(multiworld.get_location(\"{location['name']}\", player),")
                     location_rules.append(f"             lambda state: {location['rules']})")
@@ -108,6 +108,9 @@ def json_to_ap_python(file_path):
 
     locations_code.append('\n'.join(lwn_locations))
     locations_code.append("}\n")
+
+    locations_code.append("location_name_to_id: Dict[str, int] "
+                          "= {name: base_id + index for index, name in enumerate(lwn_locations)}\n")
 
     for loc_group_name in location_group_map.keys():
         location_name_groups.append(f"    \"{loc_group_name}\": {{")

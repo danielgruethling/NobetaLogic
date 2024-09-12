@@ -1608,7 +1608,7 @@
             "name": "Abyss - After first teleport",
             "exits": [
                 {
-                    "name": "Abyss Trials",
+                    "name": "Abyss - After first gate",
                     "rules": "state.has(\"Abyss First Gate\", player)"
                 }
             ],
