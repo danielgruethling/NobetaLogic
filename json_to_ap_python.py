@@ -4,6 +4,11 @@ import re
 from typing import Dict, Set
 
 
+def region_to_normalized_locations(region) -> str:
+    return re.sub(r'_+', '_', region['name'].replace(' ', '_').replace('-', '_')
+                                      .replace('.', '').lower() + "_locations")
+
+
 def json_to_ap_python(file_path):
     # Load the JSON data
     with open(file_path, 'r') as file:
@@ -11,8 +16,17 @@ def json_to_ap_python(file_path):
 
     # Generate locations.py
     locations_code = [
-        "from typing import Dict, Set, Any\n",
-        "base_id = 345600000\n"
+        "from typing import Dict, Set, Any, TYPE_CHECKING",
+        "from BaseClasses import Location\n",
+        "if TYPE_CHECKING:",
+        "    from . import LWNWorld\n\n",
+        "class LWNLocation(Location):",
+        "    game: str = \"Little Witch Nobeta\"\n",
+        "    # override constructor to automatically mark event locations as such",
+        "    def __init__(self, player: int, name=\"\", code=None, parent=None):",
+        "        super(LWNLocation, self).__init__(player, name, code, parent)",
+        "        self.event = code is None\n\n",
+        "base_id = 345600000\n",
     ]
 
     lwn_locations = [
@@ -34,12 +48,16 @@ def json_to_ap_python(file_path):
         "Event": set(),
     }
 
+    append_locations_code = [
+        "def append_locations(world: \"LWNWorld\"):",
+    ]
+
     # Generate regions.py
     regions_code = [
-        "from typing import Dict, Set\n"
-        "from BaseClasses import Region\n\n\n"
-        "class LWNRegion(Region):\n"
-        "    game: str = \"Little Witch Nobeta\"\n\n"
+        "from typing import Dict, Set",
+        "from BaseClasses import Region\n\n",
+        "class LWNRegion(Region):",
+        "    game: str = \"Little Witch Nobeta\"\n\n",
     ]
 
     lwn_regions = [
@@ -51,31 +69,30 @@ def json_to_ap_python(file_path):
         "from typing import TYPE_CHECKING\n",
         "from .options import Toggle",
         "from worlds.generic.Rules import set_rule",
-        "from BaseClasses import CollectionState\n"
+        "from BaseClasses import CollectionState\n",
         "if TYPE_CHECKING:",
-        "    from . import LWNWorld\n\n\n"
-        "def has_fire_or_thunder(state: CollectionState, player: int) -> bool:\n"
-        "    return state.has_any([\"Fire\", \"Thunder\"], player)\n\n\n"
-        "def has_wind_or_skip(state: CollectionState, player: int, world: \"LWNWorld\") -> bool:\n"
-        "    return (state.has(\"Wind\", player) or\n"
-        "            world.options.wind_requirements.value == world.options.wind_requirements.option_less_wind_requirements)\n"
-        "\n\n"
-        "def has_wind_or_damage_boost(state: CollectionState, player: int, world: \"LWNWorld\") -> bool:\n"
-        "    return (state.has(\"Wind\", player) or\n"
-        "            (world.options.wind_requirements.value == world.options.wind_requirements.option_less_wind_requirements and \n"
-        "            state.has(\"Fire\", player)))\n\n\n"
-        "def set_region_rules(world: \"LWNWorld\") -> None:\n"
-        "    multiworld = world.multiworld\n"
-        "    player = world.player\n"
-        "    options = world.options\n"
+        "    from . import LWNWorld\n\n",
+        "def has_fire_or_thunder(state: CollectionState, player: int) -> bool:",
+        "    return state.has_any([\"Fire\", \"Thunder\"], player)\n\n",
+        "def has_wind_or_skip(state: CollectionState, player: int, world: \"LWNWorld\") -> bool:",
+        "    return (state.has(\"Wind\", player) or",
+        "            world.options.wind_requirements.value == world.options.wind_requirements.option_less_wind_requirements)",
+        "\n",
+        "def has_wind_or_damage_boost(state: CollectionState, player: int, world: \"LWNWorld\") -> bool:",
+        "    return (state.has(\"Wind\", player) or",
+        "            (world.options.wind_requirements.value == world.options.wind_requirements.option_less_wind_requirements and ",
+        "            state.has(\"Fire\", player)))\n\n",
+        "def set_region_rules(world: \"LWNWorld\") -> None:",
+        "    multiworld = world.multiworld",
+        "    player = world.player",
+        "    options = world.options",
     ]
 
     location_rules = []
 
     for region in data['regions']:
         if 'locations' in region and region['locations']:
-            region_locations = re.sub(r'_+', '_', region['name'].replace(' ', '_').replace('-', '_')
-                                      .replace('.', '').lower() + "_locations")
+            region_locations = region_to_normalized_locations(region)
             lwn_locations.append(f"    **dict.fromkeys({region_locations}, None),")
             region_locations += ": Set[str] = {"
             locations_code.append(f"{region_locations}")
@@ -90,6 +107,11 @@ def json_to_ap_python(file_path):
                 if 'group' in location:
                     location_group_map[location['group']].add(location['name'])
             locations_code.append("}\n")
+            append_locations_code.append(f"    for location_name in {region_to_normalized_locations(region)}:")
+            append_locations_code.append(f"        location_id = location_name_to_id[location_name]")
+            append_locations_code.append(f"        region = world.multiworld.get_region(\"{region['name']}\", world.player)")
+            append_locations_code.append(f"        region.locations.append(LWNLocation("
+                                         f"world.player, location_name, location_id, region))\n")
 
         lwn_region = f"    \"{region['name']}\": "
         if 'exits' in region and region['exits']:
@@ -119,7 +141,8 @@ def json_to_ap_python(file_path):
         location_name_groups.append("    },")
     location_name_groups.append("}\n")
 
-    locations_code.append('\n'.join(location_name_groups))
+    locations_code.append(('\n'.join(location_name_groups)).__add__('\n'))
+    locations_code.append('\n'.join(append_locations_code))
 
     regions_code.append('\n'.join(lwn_regions))
     regions_code.append("}\n")

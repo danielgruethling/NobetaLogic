@@ -1129,19 +1129,19 @@
                 {
                     "name": "Dark Tunnel - Floating platform switch one",
                     "id": 134,
-                    "rules": "state.has(\"Thunder\", player) or state.can_reach(\"Dark Tunnel - After floating platforms\", player)",
+                    "rules": "state.has(\"Thunder\", player) or state.can_reach(\"Dark Tunnel - After floating platforms\", \"Region\", player)",
                     "group": "Barrier"
                 },
                 {
                     "name": "Dark Tunnel - Floating platform switch two",
                     "id": 135,
-                    "rules": "state.has(\"Thunder\", player) or state.can_reach(\"Dark Tunnel - After floating platforms\", player)",
+                    "rules": "state.has(\"Thunder\", player) or state.can_reach(\"Dark Tunnel - After floating platforms\", \"Region\", player)",
                     "group": "Barrier"
                 },
                 {
                     "name": "Dark Tunnel - Floating platform switch three",
                     "id": 136,
-                    "rules": "state.has(\"Thunder\", player) or state.can_reach(\"Dark Tunnel - After floating platforms\", player)",
+                    "rules": "state.has(\"Thunder\", player) or state.can_reach(\"Dark Tunnel - After floating platforms\", \"Region\", player)",
                     "group": "Barrier"
                 }
             ]
@@ -1535,7 +1535,7 @@
                 {
                     "name": "Spirit Realm - Teleporter magic switch",
                     "id": 175,
-                    "rules": "(state.has(\"Spirit Realm Magic Switch Barrier\", player) or (options.barrier_rando.value == Toggle.option_false and state.has(\"Thunder\", player))) or state.has(\"Fire\", player)",
+                    "rules": "(state.has(\"Spirit Realm Magic Switch Barrier\", player) or (options.magic_puzzle_gate_behaviour.value != options.magic_puzzle_gate_behaviour.option_randomized and state.has(\"Thunder\", player))) or state.has(\"Fire\", player)",
                     "group": "Barrier"
                 }
             ]
@@ -1741,7 +1741,7 @@
                     "group": "Chest"
                 },
                 {
-                    "name": "Abyss - Underground trial magic switch",
+                    "name": "Abyss - Underground trial unlock enemies magic switch",
                     "id": 189,
                     "rules": "has_fire_or_thunder(state, player)",
                     "group": "Barrier"
