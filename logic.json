@@ -15,7 +15,7 @@
             "exits": [
                 {
                     "name": "Shrine - After first magic switch",
-                    "rules": "state.has(\"Shrine First Magic Barrier\", player)"
+                    "rules": "state.has(\"Shrine First Magic Barrier\", player) or barriers_always_open(options)"
                 }
             ],
             "locations": [
@@ -51,11 +51,11 @@
             "exits": [
                 {
                     "name": "Shrine - Armor Hall",
-                    "rules": "state.has(\"Shrine Second Magic Barrier\", player)"
+                    "rules": "state.has(\"Shrine Second Magic Barrier\", player) or barriers_always_open(options)"
                 },
                 {
                     "name": "Shrine - Start",
-                    "rules": "state.has(\"Shrine First Magic Barrier\", player)"
+                    "rules": "state.has(\"Shrine First Magic Barrier\", player) or barriers_always_open(options)"
                 }
             ],
             "locations": [
@@ -77,23 +77,23 @@
             "exits": [
                 {
                     "name": "Secret passage - Start",
-                    "rules": "state.has(\"Secret Passage Entrance Magic Barrier\", player)"
+                    "rules": "state.has(\"Secret Passage Entrance Magic Barrier\", player) or barriers_always_open(options)"
                 },
                 {
                     "name": "Secret passage - After first fire barrier",
-                    "rules": "state.has(\"Shrine Secret Area Shortcut Gate\", player)"
+                    "rules": "state.has(\"Shrine Secret Area Shortcut Gate\", player) or gates_always_open(options)"
                 },
                 {
                     "name": "Secret Passage - Boss Shortcut",
-                    "rules": "state.has(\"Shrine Secret Boss Shortcut Gate\", player)"
+                    "rules": "state.has(\"Shrine Secret Boss Shortcut Gate\", player) or gates_always_open(options)"
                 },
                 {
                     "name": "Shrine - Underground shortcut",
-                    "rules": "state.has(\"Shrine Underground Shortcut Gate\", player)"
+                    "rules": "state.has(\"Shrine Underground Shortcut Gate\", player) or gates_always_open(options)"
                 },
                 {
                     "name": "Shrine - After first magic switch",
-                    "rules": "state.has(\"Shrine Second Magic Barrier\", player)"
+                    "rules": "state.has(\"Shrine Second Magic Barrier\", player) or barriers_always_open(options)"
                 }
             ],
             "locations": [
@@ -130,7 +130,7 @@
             "exits": [
                 {
                     "name": "Shrine - Armor Hall",
-                    "rules": "state.has(\"Shrine Underground Shortcut Gate\", player)"
+                    "rules": "state.has(\"Shrine Underground Shortcut Gate\", player) or gates_always_open(options)"
                 },
                 {
                     "name": "Underground - Shrine shortcut",
@@ -196,19 +196,19 @@
             "exits": [
                 {
                     "name": "Secret passage - Start",
-                    "rules": "state.has(\"Secret Passage First Fire Barrier\", player)"
+                    "rules": "state.has(\"Secret Passage First Fire Barrier\", player) or barriers_always_open(options)"
                 },
                 {
                     "name": "Secret Passage - Dark Tunnel shortcut",
-                    "rules": "state.has(\"Secret Passage Dark Tunnel Shortcut Gate\", player)"
+                    "rules": "state.has(\"Secret Passage Dark Tunnel Shortcut Gate\", player) or gates_always_open(options)"
                 },
                 {
                     "name": "Shrine - Armor Hall",
-                    "rules": "state.has(\"Shrine Secret Area Shortcut Gate\", player)"
+                    "rules": "state.has(\"Shrine Secret Area Shortcut Gate\", player) or gates_always_open(options)"
                 },
                 {
                     "name": "Secret Passage - Enraged Armor",
-                    "rules": "state.has(\"Secret Passage Second Fire Barrier\", player)"
+                    "rules": "state.has(\"Secret Passage Second Fire Barrier\", player) or barriers_always_open(options)"
                 }
             ],
             "locations": [
@@ -260,11 +260,11 @@
             "exits": [
                 {
                     "name": "Secret Passage - Boss Shortcut",
-                    "rules": "state.has(\"Defeat Enraged Armor Barrier\", player)"
+                    "rules": "state.has(\"Defeat Enraged Armor Barrier\", player) or barriers_always_open(options)"
                 },
                 {
                     "name": "Secret passage - After first fire barrier",
-                    "rules": "state.has(\"Secret Passage Second Fire Barrier\", player)"
+                    "rules": "state.has(\"Secret Passage Second Fire Barrier\", player) or barriers_always_open(options)"
                 }
             ],
             "locations": [
@@ -304,11 +304,11 @@
             "exits": [
                 {
                     "name": "Shrine - Armor Hall",
-                    "rules": "state.has(\"Shrine Secret Boss Shortcut Gate\", player)"
+                    "rules": "state.has(\"Shrine Secret Boss Shortcut Gate\", player) or gates_always_open(options)"
                 },
                 {
                     "name": "Secret Passage - Enraged Armor",
-                    "rules": "state.has(\"Defeat Enraged Armor Barrier\", player)"
+                    "rules": "state.has(\"Defeat Enraged Armor Barrier\", player) or barriers_always_open(options)"
                 }
             ],
             "locations": [
@@ -338,7 +338,7 @@
                 },
                 {
                     "name": "Secret passage - After first fire barrier",
-                    "rules": "state.has(\"Secret Passage Dark Tunnel Shortcut Gate\", player)"
+                    "rules": "state.has(\"Secret Passage Dark Tunnel Shortcut Gate\", player) or gates_always_open(options)"
                 }
             ],
             "locations": [
@@ -390,7 +390,7 @@
             "exits": [
                 {
                     "name": "Underground - Grand Hall",
-                    "rules": "state.has(\"Underground Magic Barrier At Maid Enemy\", player)"
+                    "rules": "state.has(\"Underground Magic Barrier At Maid Enemy\", player) or barriers_always_open(options)"
                 },
                 {
                     "name": "Underground - Start",
@@ -456,19 +456,19 @@
                 },
                 {
                     "name": "Underground - After wind",
-                    "rules": "state.has(\"Underground Magic Barrier At Maid Enemy\", player)"
+                    "rules": "state.has(\"Underground Magic Barrier At Maid Enemy\", player) or barriers_always_open(options)"
                 },
                 {
                     "name": "Underground - Lava ruins shortcut",
-                    "rules": "state.has(\"Underground Lava Ruins Shortcut Gate\", player)"
+                    "rules": "state.has(\"Underground Lava Ruins Shortcut Gate\", player) or gates_always_open(options)"
                 },
                 {
                     "name": "Underground - Shrine shortcut",
-                    "rules": "state.has(\"Underground Lava Ruins Shortcut Gate\", player)"
+                    "rules": "state.has(\"Underground Lava Ruins Shortcut Gate\", player) or gates_always_open(options)"
                 },
                 {
                     "name": "Underground - Tania shortcut",
-                    "rules": "state.has(\"Underground Tania Shortcut Gate On Grand Hall Side\", player)"
+                    "rules": "state.has(\"Underground Tania Shortcut Gate On Grand Hall Side\", player) or gates_always_open(options)"
                 }
             ]
         },
@@ -477,11 +477,11 @@
             "exits": [
                 {
                     "name": "Underground - Grand Hall",
-                    "rules": "state.has(\"Underground Lava Ruins Shortcut Gate\", player)"
+                    "rules": "state.has(\"Underground Lava Ruins Shortcut Gate\", player) or gates_always_open(options)"
                 },
                 {
                     "name": "Underground - Shrine shortcut",
-                    "rules": "state.has(\"Underground Lava Ruins Shortcut Gate\", player)"
+                    "rules": "state.has(\"Underground Lava Ruins Shortcut Gate\", player) or gates_always_open(options)"
                 },
                 {
                     "name": "Lava Ruins - Path to dark tunnel",
@@ -505,7 +505,7 @@
                 },
                 {
                     "name": "Underground - Lava ruins shortcut",
-                    "rules": "state.has(\"Underground Lava Ruins Shortcut Gate\", player)"
+                    "rules": "state.has(\"Underground Lava Ruins Shortcut Gate\", player) or gates_always_open(options)"
                 },
                 {
                     "name": "Shrine - Underground shortcut",
@@ -518,11 +518,11 @@
             "exits": [
                 {
                     "name": "Underground - Grand Hall",
-                    "rules": "state.has(\"Underground Tania Shortcut Gate On Grand Hall Side\", player)"
+                    "rules": "state.has(\"Underground Tania Shortcut Gate On Grand Hall Side\", player) or gates_always_open(options)"
                 },
                 {
                     "name": "Underground - Tania",
-                    "rules": "state.has(\"Underground Tania Shortcut Gate On Tania Side\", player)"
+                    "rules": "state.has(\"Underground Tania Shortcut Gate On Tania Side\", player) or gates_always_open(options)"
                 }
             ],
             "locations": [
@@ -543,7 +543,7 @@
             "exits": [
                 {
                     "name": "Underground - After fire magic switch barrier",
-                    "rules": "state.has(\"Underground Fire Barrier Magic Barrier\", player)"
+                    "rules": "state.has(\"Underground Fire Barrier Magic Barrier\", player) or barriers_always_open(options)"
                 },
                 {
                     "name": "Underground - Grand Hall",
@@ -574,11 +574,11 @@
             "exits": [
                 {
                     "name": "Underground - Tania",
-                    "rules": "state.has(\"Underground Enemy Magic Barrier\", player)"
+                    "rules": "state.has(\"Underground Enemy Magic Barrier\", player) or barriers_always_open(options)"
                 },
                 {
                     "name": "Underground - After fire",
-                    "rules": "state.has(\"Underground Fire Barrier Magic Barrier\", player)"
+                    "rules": "state.has(\"Underground Fire Barrier Magic Barrier\", player) or barriers_always_open(options)"
                 }
             ],
             "locations": [
@@ -594,11 +594,11 @@
             "exits": [
                 {
                     "name": "Underground - Tania shortcut",
-                    "rules": "state.has(\"Underground Tania Shortcut Gate On Tania Side\", player)"
+                    "rules": "state.has(\"Underground Tania Shortcut Gate On Tania Side\", player) or gates_always_open(options)"
                 },
                 {
                     "name": "Underground - After fire magic switch barrier",
-                    "rules": "state.has(\"Underground Enemy Magic Barrier\", player)"
+                    "rules": "state.has(\"Underground Enemy Magic Barrier\", player) or barriers_always_open(options)"
                 },
                 {
                     "name": "Lava Ruins - Start",
@@ -630,11 +630,11 @@
             "exits": [
                 {
                     "name": "Lava Ruins - After magic platforms",
-                    "rules": "state.has(\"Lava Ruins Magic Platforms\", player) or state.has(\"Lava Ruins Fake Floor Shortcut Gate\", player)"
+                    "rules": "state.has(\"Lava Ruins Magic Platforms\", player) or barriers_always_open(options) or state.has(\"Lava Ruins Fake Floor Shortcut Gate\", player) or gates_always_open(options)"
                 },
                 {
                     "name": "Lava Ruins - Monica warp",
-                    "rules": "state.has(\"Lava Ruins Monica Warp Gate\")"
+                    "rules": "state.has(\"Lava Ruins Monica Warp Gate\") or gates_always_open(options)"
                 }
             ],
             "locations": [
@@ -686,11 +686,11 @@
             "exits": [
                 {
                     "name": "Lava Ruins - After scissor enemy barrier",
-                    "rules": "state.has(\"Lava Ruins Scissor Enemy Barrier\", player)"
+                    "rules": "state.has(\"Lava Ruins Scissor Enemy Barrier\", player) or barriers_always_open(options)"
                 },
                 {
                     "name": "Lava Ruins - Start",
-                    "rules": "state.has(\"Lava Ruins Magic Platforms\", player) or state.has(\"Lava Ruins Fake Floor Shortcut Gate\", player)"
+                    "rules": "state.has(\"Lava Ruins Magic Platforms\", player) or barriers_always_open(options) or state.has(\"Lava Ruins Fake Floor Shortcut Gate\", player) or gates_always_open(options)"
                 }
             ],
             "locations": [
@@ -741,11 +741,11 @@
             "exits": [
                 {
                     "name": "Lava Ruins - After magic platforms",
-                    "rules": "state.has(\"Lava Ruins Scissor Enemy Lift\", player)"
+                    "rules": "state.has(\"Lava Ruins Scissor Enemy Lift\", player) or barriers_always_open(options)"
                 },
                 {
                     "name": "Lava Ruins - After Fire Barrier",
-                    "rules": "state.has(\"Lava Ruins Fire Magic Barrier\", player) or state.has(\"Lava Ruins Monica Shortcut Gate\", player)"
+                    "rules": "state.has(\"Lava Ruins Fire Magic Barrier\", player) or barriers_always_open(options) or state.has(\"Lava Ruins Monica Shortcut Gate\", player) or gates_always_open(options)"
                 }
             ],
             "locations": [
@@ -787,7 +787,7 @@
             "exits": [
                 {
                     "name": "Lava Ruins - After scissor enemy barrier",
-                    "rules": "state.has(\"Lava Ruins Fire Magic Barrier\", player) or state.has(\"Lava Ruins Monica Shortcut Gate\", player)"
+                    "rules": "state.has(\"Lava Ruins Fire Magic Barrier\", player) or barriers_always_open(options) or state.has(\"Lava Ruins Monica Shortcut Gate\", player) or gates_always_open(options)"
                 },
                 {
                     "name": "Lava Ruins - Monica",
@@ -877,11 +877,11 @@
             "exits": [
                 {
                     "name": "Lava Ruins - Path to dark tunnel",
-                    "rules": "state.has(\"Lava Ruins Monica Warp Gate\")"
+                    "rules": "state.has(\"Lava Ruins Monica Warp Gate\") or gates_always_open(options)"
                 },
                 {
                     "name": "Lava Ruins - Start",
-                    "rules": "state.has(\"Lava Ruins Monica Warp Gate\")"
+                    "rules": "state.has(\"Lava Ruins Monica Warp Gate\") or gates_always_open(options)"
                 }
             ],
             "locations": [
@@ -922,7 +922,7 @@
             "exits": [
                 {
                     "name": "Dark Tunnel - After first magic barrier",
-                    "rules": "state.has(\"Dark Tunnel First Magic Barrier\", player)"
+                    "rules": "state.has(\"Dark Tunnel First Magic Barrier\", player) or barriers_always_open(options)"
                 },
                 {
                     "name": "Lava Ruins - Path to dark tunnel",
@@ -930,7 +930,7 @@
                 },
                 {
                     "name": "Dark Tunnel - After light switch barrier",
-                    "rules": "state.has(\"Dark Tunnel Light Switch Barrier\", player)"
+                    "rules": "state.has(\"Dark Tunnel Light Switch Barrier\", player) or barriers_always_open(options)"
                 }
             ],
             "locations": [
@@ -972,11 +972,11 @@
             "exits": [
                 {
                     "name": "Dark Tunnel - Start",
-                    "rules": "state.has(\"Dark Tunnel First Magic Barrier\", player)"
+                    "rules": "state.has(\"Dark Tunnel First Magic Barrier\", player) or barriers_always_open(options)"
                 },
                 {
                     "name": "Dark Tunnel - After first gate",
-                    "rules": "state.has(\"Dark Tunnel First Gate\", player)"
+                    "rules": "state.has(\"Dark Tunnel First Gate\", player) or gates_always_open(options)"
                 }
             ],
             "locations": [
@@ -997,7 +997,7 @@
             "exits": [
                 {
                     "name": "Dark Tunnel - After first magic barrier",
-                    "rules": "state.has(\"Dark Tunnel First Gate\", player)"
+                    "rules": "state.has(\"Dark Tunnel First Gate\", player) or gates_always_open(options)"
                 }
             ],
             "locations": [
@@ -1044,11 +1044,11 @@
             "exits": [
                 {
                     "name": "Dark Tunnel - After thunder barrier",
-                    "rules": "state.has(\"Dark Tunnel Thunder Barrier\", player)"
+                    "rules": "state.has(\"Dark Tunnel Thunder Barrier\", player) or barriers_always_open(options)"
                 },
                 {
                     "name": "Dark Tunnel - Start",
-                    "rules": "state.has(\"Dark Tunnel Light Switch Barrier\", player)"
+                    "rules": "state.has(\"Dark Tunnel Light Switch Barrier\", player) or barriers_always_open(options)"
                 }
             ],
             "locations": [
@@ -1103,11 +1103,11 @@
             "exits": [
                 {
                     "name": "Dark Tunnel - After light switch barrier",
-                    "rules": "state.has(\"Dark Tunnel Thunder Barrier\", player)"
+                    "rules": "state.has(\"Dark Tunnel Thunder Barrier\", player) or barriers_always_open(options)"
                 },
                 {
                     "name": "Dark Tunnel - After floating platforms",
-                    "rules": "(state.has(\"Dark Tunnel Floating Platform One\", player) and state.has(\"Dark Tunnel Floating Platform Two\", player) and state.has(\"Dark Tunnel Floating Platform Three\", player)) or state.has(\"Wind\", player)"
+                    "rules": "(state.has(\"Dark Tunnel Floating Platform One\", player) and state.has(\"Dark Tunnel Floating Platform Two\", player) and state.has(\"Dark Tunnel Floating Platform Three\", player)) or barriers_always_open(options) or state.has(\"Wind\", player)"
                 }
             ],
             "locations": [
@@ -1151,7 +1151,7 @@
             "exits": [
                 {
                     "name": "Dark Tunnel - After thunder barrier",
-                    "rules": "(state.has(\"Dark Tunnel Floating Platform One\", player) and state.has(\"Dark Tunnel Floating Platform Two\", player) and state.has(\"Dark Tunnel Floating Platform Three\", player)) or state.has(\"Wind\", player)"
+                    "rules": "(state.has(\"Dark Tunnel Floating Platform One\", player) and state.has(\"Dark Tunnel Floating Platform Two\", player) and state.has(\"Dark Tunnel Floating Platform Three\", player)) or barriers_always_open(options) or state.has(\"Wind\", player)"
                 },
                 {
                     "name": "Dark Tunnel - After bridge collapse",
@@ -1298,11 +1298,11 @@
                 },
                 {
                     "name": "Spirit Realm - After second Seal",
-                    "rules": "state.has(\"Spirit Realm Statue Shortcut Gate\", player)"
+                    "rules": "state.has(\"Spirit Realm Statue Shortcut Gate\", player) or gates_always_open(options)"
                 },
                 {
                     "name": "Spirit Realm - After arcane barrier",
-                    "rules": "state.has(\"Spirit Realm Arcane Barrier\", player)"
+                    "rules": "state.has(\"Spirit Realm Arcane Barrier\", player) or barriers_always_open(options)"
                 }
             ],
             "locations": [
@@ -1397,7 +1397,7 @@
             "exits": [
                 {
                     "name": "Spirit Realm - After first Seal",
-                    "rules": "state.has(\"Spirit Realm First Seal Magic Barrier\", player)"
+                    "rules": "state.has(\"Spirit Realm First Seal Magic Barrier\", player) or barriers_always_open(options)"
                 }
             ],
             "locations": [
@@ -1433,11 +1433,11 @@
             "exits": [
                 {
                     "name": "Spirit Realm - Seal",
-                    "rules": "state.has(\"Spirit Realm First Seal Magic Barrier\", player)"
+                    "rules": "state.has(\"Spirit Realm First Seal Magic Barrier\", player) or barriers_always_open(options)"
                 },
                 {
                     "name": "Spirit Realm - After second Seal",
-                    "rules": "state.has(\"Spirit Realm Second Seal Magic Barrier\", player)"
+                    "rules": "state.has(\"Spirit Realm Second Seal Magic Barrier\", player) or barriers_always_open(options)"
                 }
             ],
             "locations": [
@@ -1463,15 +1463,15 @@
             "exits": [
                 {
                     "name": "Spirit Realm - After first Seal",
-                    "rules": "state.has(\"Spirit Realm Second Seal Magic Barrier\", player)"
+                    "rules": "state.has(\"Spirit Realm Second Seal Magic Barrier\", player) or barriers_always_open(options)"
                 },
                 {
                     "name": "Spirit Realm - After elevator",
-                    "rules": "state.has(\"Spirit Realm Elevator\", player)"
+                    "rules": "state.has(\"Spirit Realm Elevator\", player) or barriers_always_open(options)"
                 },
                 {
                     "name": "Spirit Realm - After platforms",
-                    "rules": "state.has(\"Spirit Realm Statue Shortcut Gate\", player)"
+                    "rules": "state.has(\"Spirit Realm Statue Shortcut Gate\", player) or gates_always_open(options)"
                 }
             ],
             "locations": [
@@ -1502,7 +1502,7 @@
             "exits": [
                 {
                     "name": "Spirit Realm - After teleport",
-                    "rules": "state.has(\"Spirit Realm Teleporter\", player)"
+                    "rules": "state.has(\"Spirit Realm Teleporter\", player) or barriers_always_open(options)"
                 },
                 {
                     "name": "Spirit Realm - After second Seal",
@@ -1523,7 +1523,7 @@
                 {
                     "name": "Spirit Realm - Fire control magic switch",
                     "id": 173,
-                    "rules": "state.has(\"Ice\", player) or state.has(\"Thunder\", player) or state.has(\"Spirit Realm Fire Deactivation\", player)",
+                    "rules": "state.has(\"Ice\", player) or state.has(\"Thunder\", player) or state.has(\"Spirit Realm Fire Deactivation\", player) or barriers_always_open(options)",
                     "group": "Barrier"
                 },
                 {
@@ -1535,7 +1535,7 @@
                 {
                     "name": "Spirit Realm - Teleporter magic switch",
                     "id": 175,
-                    "rules": "(state.has(\"Spirit Realm Magic Switch Barrier\", player) or (options.magic_puzzle_gate_behaviour.value != options.magic_puzzle_gate_behaviour.option_randomized and state.has(\"Thunder\", player))) or state.has(\"Fire\", player)",
+                    "rules": "state.has(\"Spirit Realm Magic Switch Barrier\", player) or barriers_always_open(options) or state.has(\"Thunder\", player) or state.has(\"Fire\", player)",
                     "group": "Barrier"
                 }
             ]
@@ -1609,7 +1609,7 @@
             "exits": [
                 {
                     "name": "Abyss - After first gate",
-                    "rules": "state.has(\"Abyss First Gate\", player)"
+                    "rules": "state.has(\"Abyss First Gate\", player) or gates_always_open(options)"
                 }
             ],
             "locations": [
@@ -1625,11 +1625,11 @@
             "exits": [
                 {
                     "name": "Abyss - After giant maid barrier",
-                    "rules": "state.has(\"Abyss After Giant Maid Barrier\", player)"
+                    "rules": "state.has(\"Abyss After Giant Maid Barrier\", player) or barriers_always_open(options)"
                 },
                 {
                     "name": "Abyss - Left gate at trap",
-                    "rules": "state.has(\"Abyss Left Trap Gate\", player)"
+                    "rules": "state.has(\"Abyss Left Trap Gate\", player) or gates_always_open(options)"
                 }
             ],
             "locations": [
@@ -1666,7 +1666,7 @@
             "exits": [
                 {
                     "name": "Abyss - After first gate",
-                    "rules": "state.has(\"Abyss Left Trap Gate\", player)"
+                    "rules": "state.has(\"Abyss Left Trap Gate\", player) or gates_always_open(options)"
                 }
             ],
             "locations": [
@@ -1715,7 +1715,7 @@
                 },
                 {
                     "name": "Abyss - Nonota",
-                    "rules": "state.has(\"Abyss Underground Trial Magic Switch\", player) and state.has(\"Abyss Lava Ruins Trial Magic Switch\", player) and state.has(\"Abyss Dark Tunnel Trial Magic Switch\", player)"
+                    "rules": "(state.has(\"Abyss Underground Trial Magic Switch\", player) and state.has(\"Abyss Lava Ruins Trial Magic Switch\", player) and state.has(\"Abyss Dark Tunnel Trial Magic Switch\", player)) or barriers_always_open(options)"
                 }
             ],
             "locations": [
@@ -1731,7 +1731,7 @@
             "exits": [
                 {
                     "name": "Abyss - Underground Trial magic switch",
-                    "rules": "state.has(\"Abyss After Scissor Enemy Barrier\", player)"
+                    "rules": "state.has(\"Abyss After Scissor Enemy Barrier\", player) or barriers_always_open(options)"
                 }
             ],
             "locations": [
@@ -1765,7 +1765,7 @@
             "exits": [
                 {
                     "name": "Abyss - Trials Lobby",
-                    "rules": "state.has(\"Abyss Underground Trial Magic Switch\", player)"
+                    "rules": "state.has(\"Abyss Underground Trial Magic Switch\", player) or barriers_always_open(options)"
                 }
             ],
             "locations": [
@@ -1787,7 +1787,7 @@
             "exits": [
                 {
                     "name": "Abyss - Dark Tunnel Trial magic switch",
-                    "rules": "state.has(\"Abyss Dark Tunnel Trial Maid Enemy Barrier\", player)"
+                    "rules": "state.has(\"Abyss Dark Tunnel Trial Maid Enemy Barrier\", player) or barriers_always_open(options)"
                 }
             ],
             "locations": [
@@ -1816,7 +1816,7 @@
             "exits": [
                 {
                     "name": "Abyss - Trials Lobby",
-                    "rules": "state.has(\"Abyss Dark Tunnel Trial Magic Switch\", player)"
+                    "rules": "state.has(\"Abyss Dark Tunnel Trial Magic Switch\", player) or barriers_always_open(options)"
                 }
             ],
             "locations": [
@@ -1838,7 +1838,7 @@
             "exits": [
                 {
                     "name": "Abyss - Lava Ruins Trial magic switch",
-                    "rules": "state.has(\"Abyss Lava Ruins Trial Maid Enemy Barrier\", player)"
+                    "rules": "state.has(\"Abyss Lava Ruins Trial Maid Enemy Barrier\", player) or barriers_always_open(options)"
                 }
             ],
             "locations": [
@@ -1866,7 +1866,7 @@
             "exits": [
                 {
                     "name": "Abyss - Trials Lobby",
-                    "rules": "state.has(\"Abyss Lava Ruins Trial Magic Switch\", player)"
+                    "rules": "state.has(\"Abyss Lava Ruins Trial Magic Switch\", player) or barriers_always_open(options)"
                 }
             ],
             "locations": [

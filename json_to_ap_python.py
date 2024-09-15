@@ -6,7 +6,7 @@ from typing import Dict, Set
 
 def region_to_normalized_locations(region) -> str:
     return re.sub(r'_+', '_', region['name'].replace(' ', '_').replace('-', '_')
-                                      .replace('.', '').lower() + "_locations")
+                  .replace('.', '').lower() + "_locations")
 
 
 def json_to_ap_python(file_path):
@@ -67,7 +67,7 @@ def json_to_ap_python(file_path):
     # Generate rules.py
     rules_code = [
         "from typing import TYPE_CHECKING\n",
-        "from .options import Toggle",
+        "from .options import Toggle, LWNOptions",
         "from worlds.generic.Rules import set_rule",
         "from BaseClasses import CollectionState\n",
         "if TYPE_CHECKING:",
@@ -76,16 +76,27 @@ def json_to_ap_python(file_path):
         "    return state.has_any([\"Fire\", \"Thunder\"], player)\n\n",
         "def has_wind_or_skip(state: CollectionState, player: int, world: \"LWNWorld\") -> bool:",
         "    return (state.has(\"Wind\", player) or",
-        "            world.options.wind_requirements.value == world.options.wind_requirements.option_less_wind_requirements)",
+        "            world.options.wind_requirements.value == "
+        "world.options.wind_requirements.option_less_wind_requirements)",
         "\n",
         "def has_wind_or_damage_boost(state: CollectionState, player: int, world: \"LWNWorld\") -> bool:",
         "    return (state.has(\"Wind\", player) or",
-        "            (world.options.wind_requirements.value == world.options.wind_requirements.option_less_wind_requirements and ",
-        "            state.has(\"Fire\", player)))\n\n",
+        "            (world.options.wind_requirements.value == "
+        "world.options.wind_requirements.option_less_wind_requirements and ",
+        "            state.has(\"Fire\", player)))",
+        "\n",
+        "def barriers_always_open(options: LWNOptions) -> bool:",
+        "    return options.magic_puzzle_gate_behaviour.value == "
+        "options.magic_puzzle_gate_behaviour.option_always_open",
+        "\n",
+        "def gates_always_open(options: LWNOptions) -> bool:",
+        "    return options.shortcut_gate_behaviour.value == "
+        "options.shortcut_gate_behaviour.option_always_open",
+        "\n",
         "def set_region_rules(world: \"LWNWorld\") -> None:",
         "    multiworld = world.multiworld",
         "    player = world.player",
-        "    options = world.options",
+        "    options = world.options\n",
     ]
 
     location_rules = []
@@ -103,13 +114,16 @@ def json_to_ap_python(file_path):
                     locations_code.append(f"    \"{location['name']}\",")
                 if 'rules' in location:
                     location_rules.append(f"    set_rule(multiworld.get_location(\"{location['name']}\", player),")
-                    location_rules.append(f"             lambda state: {location['rules']})")
+                    subbed_rule = re.sub(' or ', r"\n             or ", location['rules'])
+                    subbed_rule = re.sub(' and ', r"\n             and ", subbed_rule)
+                    location_rules.append(f"             lambda state: {subbed_rule})")
                 if 'group' in location:
                     location_group_map[location['group']].add(location['name'])
             locations_code.append("}\n")
             append_locations_code.append(f"    for location_name in {region_to_normalized_locations(region)}:")
             append_locations_code.append(f"        location_id = location_name_to_id[location_name]")
-            append_locations_code.append(f"        region = world.multiworld.get_region(\"{region['name']}\", world.player)")
+            append_locations_code.append(
+                f"        region = world.multiworld.get_region(\"{region['name']}\", world.player)")
             append_locations_code.append(f"        region.locations.append(LWNLocation("
                                          f"world.player, location_name, location_id, region))\n")
 
@@ -119,9 +133,13 @@ def json_to_ap_python(file_path):
             for region_exit in region['exits']:
                 lwn_region += f"\"{region_exit['name']}\", "
                 rule = region_exit['rules'] if isinstance(region_exit['rules'], str) else "True"
+                if rule.find(" or ") >= 0 or rule.find(" and ") >= 0:
+                    rule = "(" + rule + ")"
+                subbed_rule = re.sub(' or ', r"\n                       or ", rule)
+                subbed_rule = re.sub(' and ', r"\n                       and ", subbed_rule)
                 rules_code.append(f"    multiworld.get_entrance(\"{region['name']} -> "
                                   f"{region_exit['name']}\", player).access_rule = \\\n"
-                                  f"        lambda state: {rule}")
+                                  f"        lambda state: {subbed_rule}")
             lwn_region = lwn_region[:-2]
             lwn_region += "},"
         else:
@@ -141,7 +159,7 @@ def json_to_ap_python(file_path):
         location_name_groups.append("    },")
     location_name_groups.append("}\n")
 
-    locations_code.append(('\n'.join(location_name_groups)).__add__('\n'))
+    locations_code.append(('\n'.join(location_name_groups)) + '\n')
     locations_code.append('\n'.join(append_locations_code))
 
     regions_code.append('\n'.join(lwn_regions))
