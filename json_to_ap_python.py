@@ -30,7 +30,7 @@ def json_to_ap_python(file_path):
     ]
 
     lwn_locations = [
-        "lwn_locations: Dict[str, Any] = {",
+        "lwn_locations: Dict[str, str] = {",
     ]
 
     location_name_groups = [
@@ -104,14 +104,14 @@ def json_to_ap_python(file_path):
     for region in data['regions']:
         if 'locations' in region and region['locations']:
             region_locations = region_to_normalized_locations(region)
-            lwn_locations.append(f"    **dict.fromkeys({region_locations}, None),")
-            region_locations += ": Set[str] = {"
+            lwn_locations.append(f"    **{region_locations},")
+            region_locations += ": Dict[str, str] = {"
             locations_code.append(f"{region_locations}")
             for location in region['locations']:
-                if 'id' in location and 'name' in location:
-                    locations_code.append(f"    \"{location['name']}\",")
+                if 'name' in location and 'group' in location:
+                    locations_code.append(f"    \"{location['name']}\": \"{location['group']}\",")
                 else:
-                    locations_code.append(f"    \"{location['name']}\",")
+                    locations_code.append(f"    \"{location['name']}\": \"Item\",")
                 if 'rules' in location:
                     location_rules.append(f"    set_rule(multiworld.get_location(\"{location['name']}\", player),")
                     subbed_rule = re.sub(' or ', r"\n             or ", location['rules'])
@@ -150,7 +150,7 @@ def json_to_ap_python(file_path):
     locations_code.append("}\n")
 
     locations_code.append("location_name_to_id: Dict[str, int] "
-                          "= {name: base_id + index for index, name in enumerate(lwn_locations)}\n")
+                          "= {name: base_id + index for index, name in enumerate(sorted(lwn_locations))}\n")
 
     for loc_group_name in location_group_map.keys():
         location_name_groups.append(f"    \"{loc_group_name}\": {{")
