@@ -104,6 +104,7 @@
                 },
                 {
                     "name": "Shrine - Specter Armor",
+                    "rules": "has_attack_magic(state, player)",
                     "group": "Bosses"
                 },
                 {
@@ -247,22 +248,22 @@
                 },
                 {
                     "name": "Secret Passage - Enraged Armor",
-                    "rules": "state.has(\"Mana Absorption\", player)",
+                    "rules": "has_attack_magic(state, player) and has_counter(state, player)",
                     "group": "Bosses"
                 },
                 {
                     "name": "Secret Passage - 56. Knight Kingdom Crown from Enraged Armor",
-                    "rules": "state.has(\"Mana Absorption\", player)",
+                    "rules": "has_attack_magic(state, player) and has_counter(state, player)",
                     "group": "Lore"
                 },
                 {
                     "name": "Secret Passage - Teleport from Enraged Armor",
-                    "rules": "state.has(\"Mana Absorption\", player)",
+                    "rules": "has_attack_magic(state, player) and has_counter(state, player)",
                     "group": "Teleport"
                 },
                 {
                     "name": "Secret Passage - Defeat Enraged Armor barrier",
-                    "rules": "state.has(\"Mana Absorption\", player)",
+                    "rules": "has_attack_magic(state, player) and has_counter(state, player)",
                     "group": "Barrier"
                 }
             ]
@@ -545,13 +546,13 @@
                 },
                 {
                     "name": "Lava Ruins - Start",
-                    "rules": "state.has(\"Mana Absorption\", player)"
+                    "rules": "has_attack_magic(state, player) and has_counter(state, player)"
                 }
             ],
             "locations": [
                 {
                     "name": "Underground - Tania",
-                    "rules": "state.has(\"Mana Absorption\", player)",
+                    "rules": "has_attack_magic(state, player) and has_counter(state, player)",
                     "group": "Bosses"
                 },
                 {
@@ -560,7 +561,7 @@
                 },
                 {
                     "name": "Underground - 98. Lost Maiden's Soul Shard from Tania",
-                    "rules": "state.has(\"Mana Absorption\", player)",
+                    "rules": "has_attack_magic(state, player) and has_counter(state, player)",
                     "group": "Lore"
                 }
             ]
@@ -759,22 +760,22 @@
             "locations": [
                 {
                     "name": "Lava Ruins - Monica",
-                    "rules": "state.has(\"Mana Absorption\", player)",
+                    "rules": "has_attack_magic(state, player) and has_counter(state, player)",
                     "group": "Bosses"
                 },
                 {
                     "name": "Lava Ruins - 34. Bestian Ear from Monica",
-                    "rules": "state.has(\"Mana Absorption\", player)",
+                    "rules": "has_attack_magic(state, player) and has_counter(state, player)",
                     "group": "Lore"
                 },
                 {
                     "name": "Lava Ruins - 33. Bestian Palm from Monica",
-                    "rules": "state.has(\"Mana Absorption\", player)",
+                    "rules": "has_attack_magic(state, player) and has_counter(state, player)",
                     "group": "Lore"
                 },
                 {
                     "name": "Lava Ruins - 99. Child's Soul Shard from Monica",
-                    "rules": "state.has(\"Mana Absorption\", player)",
+                    "rules": "has_attack_magic(state, player) and has_counter(state, player)",
                     "group": "Lore"
                 }
             ]
@@ -1086,22 +1087,22 @@
                 },
                 {
                     "name": "Dark Tunnel - Vanessa",
-                    "rules": "state.has(\"Mana Absorption\", player)",
+                    "rules": "has_attack_magic(state, player) and has_counter(state, player)",
                     "group": "Bosses"
                 },
                 {
                     "name": "Dark Tunnel - 100. King's Final Honor from Vanessa",
-                    "rules": "state.has(\"Mana Absorption\", player)",
+                    "rules": "has_attack_magic(state, player) and has_counter(state, player)",
                     "group": "Lore"
                 },
                 {
                     "name": "Dark Tunnel - 78. Ancient Throne Rune from Vanessa",
-                    "rules": "state.has(\"Mana Absorption\", player)",
+                    "rules": "has_attack_magic(state, player) and has_counter(state, player)",
                     "group": "Lore"
                 },
                 {
                     "name": "Dark Tunnel - 77. The Throne from Vanessa",
-                    "rules": "state.has(\"Mana Absorption\", player)",
+                    "rules": "has_attack_magic(state, player) and has_counter(state, player)",
                     "group": "Lore"
                 }
             ]
@@ -1393,17 +1394,17 @@
                 },
                 {
                     "name": "Spirit Realm - Vanessa V2",
-                    "rules": "state.has(\"Mana Absorption\", player)",
+                    "rules": "has_attack_magic(state, player) and has_counter(state, player)",
                     "group": "Bosses"
                 },
                 {
                     "name": "Spirit Realm - 101. Proud King's Crafted Soul Shard from Vanessa V2",
-                    "rules": "state.has(\"Mana Absorption\", player)",
+                    "rules": "has_attack_magic(state, player) and has_counter(state, player)",
                     "group": "Lore"
                 },
                 {
                     "name": "Spirit Realm - Thunder spell from Vanessa V2",
-                    "rules": "state.has(\"Mana Absorption\", player)",
+                    "rules": "has_attack_magic(state, player) and has_counter(state, player)",
                     "group": "Item"
                 }
             ]
@@ -1682,12 +1683,12 @@
             "locations": [
                 {
                     "name": "Abyss - 102. Lost Maiden's Crafted Soul Shard from Nonota",
-                    "rules": "state.has(\"Mana Absorption\", player)",
+                    "rules": "has_attack_magic(state, player) and has_counter(state, player)",
                     "group": "Lore"
                 },
                 {
                     "name": "Abyss - Nonota",
-                    "rules": "state.has(\"Mana Absorption\", player)",
+                    "rules": "has_attack_magic(state, player) and has_counter(state, player)",
                     "group": "Event"
                 }
             ]
