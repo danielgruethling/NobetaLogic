@@ -74,16 +74,16 @@ def json_to_ap_python(file_path):
         "    from . import LWNWorld\n\n",
         "def has_fire_or_thunder(state: CollectionState, player: int) -> bool:",
         "    return state.has_any([\"Fire\", \"Thunder\"], player)\n\n",
-        "def has_wind_or_skip(state: CollectionState, player: int, world: \"LWNWorld\") -> bool:",
-        "    return (state.has(\"Wind\", player) or",
+        "def has_wind_or_skip(state: CollectionState, world: \"LWNWorld\") -> bool:",
+        "    return (state.has(\"Wind\", world.player) or",
         "            world.options.wind_requirements.value == "
         "world.options.wind_requirements.option_less_wind_requirements)",
         "\n",
-        "def has_wind_or_damage_boost(state: CollectionState, player: int, world: \"LWNWorld\") -> bool:",
-        "    return (state.has(\"Wind\", player) or",
+        "def has_wind_or_damage_boost(state: CollectionState, world: \"LWNWorld\") -> bool:",
+        "    return (state.has(\"Wind\", world.player) or",
         "            (world.options.wind_requirements.value == "
         "world.options.wind_requirements.option_less_wind_requirements and ",
-        "            state.has(\"Fire\", player)))",
+        "            state.has(\"Fire\", world.player)))",
         "\n",
         "def barriers_always_open(options: LWNOptions) -> bool:",
         "    return options.magic_puzzle_gate_behaviour.value == "
@@ -99,11 +99,17 @@ def json_to_ap_python(file_path):
         "def has_counter(state: CollectionState, player: int) -> bool:",
         "    return state.has(\"Mana Absorption\", player)",
         "\n",
+        "def has_barrier(state: CollectionState, barrier: str, world: \"LWNWorld\") -> bool:",
+        "    return state.has(barrier, world.player) or barriers_always_open(world.options)",
+        "\n",
+        "def has_gate(state: CollectionState, gate: str, world: \"LWNWorld\") -> bool:",
+        "    return state.has(gate, world.player) or gates_always_open(world.options)",
+        "\n",
         "def set_region_rules(world: \"LWNWorld\") -> None:",
         "    multiworld = world.multiworld",
         "    player = world.player",
         "    options = world.options",
-        "\n",
+        "",
     ]
 
     location_rules = []
