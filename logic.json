@@ -45,7 +45,7 @@
             "name": "Shrine - After first magic switch",
             "exits": [
                 {
-                    "name": "Shrine - Armor Hall",
+                    "name": "Shrine - Cat Room",
                     "rules": "has_barrier(state, \"Shrine Second Magic Barrier\", world)"
                 },
                 {
@@ -61,6 +61,25 @@
                 {
                     "name": "Shrine - Second magic switch",
                     "rules": "state.has(\"Arcane\", player) or state.has(\"Thunder\", player)",
+                    "group": "Barrier"
+                }
+            ]
+        },
+        {
+            "name": "Shrine - Cat Room",
+            "exits": [
+                {
+                    "name": "Shrine - After first magic switch",
+                    "rules": "state.has(\"Shrine Second Magic Barrier\", player) or barriers_always_open(options)"
+                },
+                {
+                    "name": "Shrine - Armor Hall",
+                    "rules": "state.has(\"Shrine Meet Cat Magic Barrier\", player) or barriers_always_open(options)"
+                }
+            ],
+            "locations": [
+                {
+                    "name": "Shrine - Meet Cat barrier",
                     "group": "Barrier"
                 }
             ]
