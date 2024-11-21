@@ -134,15 +134,24 @@ def json_to_ap_python(file_path):
                     location_group_map[location['group']].add(location['name'])
             locations_code.append("}\n")
             append_locations_code.append(f"    for location_name in {region_to_normalized_locations(region)}:")
-            if(region['name'] != "Abyss - Nonota"):
+            if region['name'] != "Abyss - Nonota":
                 append_locations_code.append(f"        location_id = location_name_to_id[location_name]")
             else:
                 append_locations_code.append(f"        if location_name != \"Abyss - Nonota\":")
                 append_locations_code.append(f"            location_id = location_name_to_id[location_name]")
                 append_locations_code.append(f"        else:")
                 append_locations_code.append(f"            location_id = None")
+            append_locations_code.append(f"        group_name = {region_to_normalized_locations(region)}[location_name]")
             append_locations_code.append(
                 f"        region = world.multiworld.get_region(\"{region['name']}\", world.player)")
+            append_locations_code.append(f"        if (group_name == \"Gate\"")
+            append_locations_code.append(f"                and world.options.shortcut_gate_behaviour.value"
+                                         f" == world.options.shortcut_gate_behaviour.option_vanilla):")
+            append_locations_code.append(f"            continue")
+            append_locations_code.append(f"        elif (group_name == \"Barrier\"")
+            append_locations_code.append(f"                and world.options.magic_puzzle_gate_behaviour.value"
+                                         f" == world.options.magic_puzzle_gate_behaviour.option_vanilla):")
+            append_locations_code.append(f"            continue")
             append_locations_code.append(f"        region.locations.append(LWNLocation("
                                          f"world.player, location_name, location_id, region))\n")
 

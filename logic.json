@@ -106,6 +106,10 @@
                 {
                     "name": "Shrine - After first magic switch",
                     "rules": "has_barrier(state, \"Shrine Second Magic Barrier\", world)"
+                },
+                {
+                    "name": "Underground - Start",
+                    "rules": "has_attack_magic(state, player)"
                 }
             ],
             "locations": [
