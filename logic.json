@@ -15,7 +15,7 @@
             "exits": [
                 {
                     "name": "Shrine - After first magic switch",
-                    "rules": "has_barrier(state, \"Shrine First Magic Barrier\", world)"
+                    "rules": "has_barrier(state, \"Shrine First Magic Barrier\", world) or options.barrier_behaviour.value == options.barrier_behaviour.option_vanilla"
                 }
             ],
             "locations": [
@@ -46,7 +46,7 @@
             "exits": [
                 {
                     "name": "Shrine - Cat Room",
-                    "rules": "has_barrier(state, \"Shrine Second Magic Barrier\", world)"
+                    "rules": "has_barrier(state, \"Shrine Second Magic Barrier\", world) or options.barrier_behaviour.value == options.barrier_behaviour.option_vanilla"
                 },
                 {
                     "name": "Shrine - Start",
@@ -70,11 +70,11 @@
             "exits": [
                 {
                     "name": "Shrine - After first magic switch",
-                    "rules": "state.has(\"Shrine Second Magic Barrier\", player) or barriers_always_open(options)"
+                    "rules": "has_barrier(state, \"Shrine Second Magic Barrier\", world)"
                 },
                 {
                     "name": "Shrine - Armor Hall",
-                    "rules": "state.has(\"Shrine Meet Cat Magic Barrier\", player) or barriers_always_open(options)"
+                    "rules": "has_barrier(state, \"Shrine Meet Cat Magic Barrier\", world) or options.barrier_behaviour.value == options.barrier_behaviour.option_vanilla"
                 }
             ],
             "locations": [
@@ -89,7 +89,7 @@
             "exits": [
                 {
                     "name": "Secret passage - Start",
-                    "rules": "has_barrier(state, \"Secret Passage Entrance Magic Barrier\", world)"
+                    "rules": "has_barrier(state, \"Secret Passage Entrance Magic Barrier\", world) or (options.barrier_behaviour.value == options.barrier_behaviour.option_vanilla and has_fire_or_thunder(state, player))"
                 },
                 {
                     "name": "Secret passage - After first fire barrier",
@@ -104,8 +104,8 @@
                     "rules": "has_gate(state, \"Shrine Underground Shortcut Gate\", world)"
                 },
                 {
-                    "name": "Shrine - After first magic switch",
-                    "rules": "has_barrier(state, \"Shrine Second Magic Barrier\", world)"
+                    "name": "Shrine - Cat Room",
+                    "rules": "has_barrier(state, \"Shrine Meet Cat Magic Barrier\", world)"
                 },
                 {
                     "name": "Underground - Start",
