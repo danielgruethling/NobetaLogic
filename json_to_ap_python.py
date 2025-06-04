@@ -128,13 +128,13 @@ def json_to_ap_python(file_path):
                 if 'rules' in location:
                     if 'group' in location:
                         if location['group'] == "Barrier":
-                            location_rules.append(f"    if options.barrier_behaviour.value != options.barrier_behaviour.option_vanilla:")
+                            location_rules.append(f"    if options.barrier_behaviour.value == options.barrier_behaviour.option_randomized:")
                             location_rules.append(f"        set_rule(multiworld.get_location(\"{location['name']}\", player),")
                             subbed_rule = re.sub(' or ', r"\n                 or ", location['rules'])
                             subbed_rule = re.sub(' and ', r"\n                 and ", subbed_rule)
                             location_rules.append(f"                 lambda state: {subbed_rule})")
                         elif location['group'] == "Metal Gate":
-                            location_rules.append(f"    if options.shortcut_gate_behaviour.value != options.shortcut_gate_behaviour.option_vanilla:")
+                            location_rules.append(f"    if options.shortcut_gate_behaviour.value == options.shortcut_gate_behaviour.option_randomized:")
                             location_rules.append(f"        set_rule(multiworld.get_location(\"{location['name']}\", player),")
                             subbed_rule = re.sub(' or ', r"\n                 or ", location['rules'])
                             subbed_rule = re.sub(' and ', r"\n                 and ", subbed_rule)
