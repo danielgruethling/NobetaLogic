@@ -16,8 +16,9 @@ def json_to_ap_python(file_path):
 
     # Generate locations.py
     locations_code = [
-        "from typing import Dict, Set, Any, TYPE_CHECKING",
-        "from BaseClasses import Location\n",
+        "from typing import Dict, TYPE_CHECKING",
+        "from BaseClasses import Location",
+        "from Options import Toggle\n",
         "if TYPE_CHECKING:",
         "    from . import LWNWorld\n\n",
         "class LWNLocation(Location):",
@@ -49,6 +50,21 @@ def json_to_ap_python(file_path):
     }
 
     append_locations_code = [
+        "def add_location_to_region(location_name, location_id, group_name, region, world):",
+        "    if (group_name == \"Metal Gate\"",
+        "            and world.options.shortcut_gate_behaviour.value"
+                                 f" == world.options.shortcut_gate_behaviour.option_vanilla):",
+        "        return",
+        "    elif (group_name == \"Barrier\"",
+        "          and world.options.barrier_behaviour.value"
+                                 " == world.options.barrier_behaviour.option_vanilla):",
+        "        return",
+        "    elif (group_name == \"Lore\"",
+        "          and world.options.randomize_lore.value"
+                                 f" == Toggle.option_false):",
+        "        return",
+        "    region.locations.append(LWNLocation("
+                                 f"world.player, location_name, location_id, region))\n\n",
         "def append_locations(world: \"LWNWorld\"):",
     ]
 
@@ -139,6 +155,12 @@ def json_to_ap_python(file_path):
                             subbed_rule = re.sub(' or ', r"\n                 or ", location['rules'])
                             subbed_rule = re.sub(' and ', r"\n                 and ", subbed_rule)
                             location_rules.append(f"                 lambda state: {subbed_rule})")
+                        elif location['group'] == "Lore":
+                            location_rules.append(f"    if world.options.randomize_lore.value == Toggle.option_true:")
+                            location_rules.append(f"        set_rule(multiworld.get_location(\"{location['name']}\", player),")
+                            subbed_rule = re.sub(' or ', r"\n                 or ", location['rules'])
+                            subbed_rule = re.sub(' and ', r"\n                 and ", subbed_rule)
+                            location_rules.append(f"                 lambda state: {subbed_rule})")
                         else:
                             location_rules.append(f"    set_rule(multiworld.get_location(\"{location['name']}\", player),")
                             subbed_rule = re.sub(' or ', r"\n             or ", location['rules'])
@@ -161,18 +183,8 @@ def json_to_ap_python(file_path):
                 append_locations_code.append(f"        else:")
                 append_locations_code.append(f"            location_id = None")
             append_locations_code.append(f"        group_name = {region_to_normalized_locations(region)}[location_name]")
-            append_locations_code.append(
-                f"        region = world.multiworld.get_region(\"{region['name']}\", world.player)")
-            append_locations_code.append(f"        if (group_name == \"Gate\"")
-            append_locations_code.append(f"                and world.options.shortcut_gate_behaviour.value"
-                                         f" == world.options.shortcut_gate_behaviour.option_vanilla):")
-            append_locations_code.append(f"            continue")
-            append_locations_code.append(f"        elif (group_name == \"Barrier\"")
-            append_locations_code.append(f"                and world.options.barrier_behaviour.value"
-                                         f" == world.options.barrier_behaviour.option_vanilla):")
-            append_locations_code.append(f"            continue")
-            append_locations_code.append(f"        region.locations.append(LWNLocation("
-                                         f"world.player, location_name, location_id, region))\n")
+            append_locations_code.append(f"        region = world.multiworld.get_region(\"{region['name']}\", world.player)")
+            append_locations_code.append(f"        add_location_to_region(location_name, location_id, group_name, region, world)\n")
 
         lwn_region = f"    \"{region['name']}\": "
         if 'exits' in region and region['exits']:
