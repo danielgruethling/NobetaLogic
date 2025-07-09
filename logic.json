@@ -1573,7 +1573,7 @@
             "exits": [
                 {
                     "name": "Abyss - Underground Trial magic switch",
-                    "rules": "has_barrier(state, \"Abyss After Scissor Enemy Barrier\", world)"
+                    "rules": "has_barrier(state, \"Abyss After Scissor Enemy Barrier\", world) or (options.barrier_behaviour.value == options.barrier_behaviour.option_vanilla and has_fire_or_thunder(state, player))"
                 }
             ],
             "locations": [
@@ -1623,7 +1623,7 @@
             "exits": [
                 {
                     "name": "Abyss - Dark Tunnel Trial magic switch",
-                    "rules": "has_barrier(state, \"Abyss Dark Tunnel Trial Maid Enemy Barrier\", world)"
+                    "rules": "has_barrier(state, \"Abyss Dark Tunnel Trial Maid Enemy Barrier\", world) or (options.barrier_behaviour.value == options.barrier_behaviour.option_vanilla and state.has(\"Thunder\", player))"
                 }
             ],
             "locations": [
@@ -1669,7 +1669,7 @@
             "exits": [
                 {
                     "name": "Abyss - Lava Ruins Trial magic switch",
-                    "rules": "has_barrier(state, \"Abyss Lava Ruins Trial Maid Enemy Barrier\", world)"
+                    "rules": "has_barrier(state, \"Abyss Lava Ruins Trial Maid Enemy Barrier\", world) or (options.barrier_behaviour.value == options.barrier_behaviour.option_vanilla and has_attack_magic(state, player))"
                 }
             ],
             "locations": [

@@ -27,7 +27,7 @@ def json_to_ap_python(file_path):
         "    def __init__(self, player: int, name=\"\", code=None, parent=None):",
         "        super(LWNLocation, self).__init__(player, name, code, parent)",
         "        self.event = code is None\n\n",
-        "base_id = 345600000\n",
+        "base_id = 1\n",
     ]
 
     lwn_locations = [
