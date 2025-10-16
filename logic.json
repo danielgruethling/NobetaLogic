@@ -574,7 +574,7 @@
             ],
             "locations": [
                 {
-                    "name": "Underground - Tania",
+                    "name": "Underground - Defeat Tania",
                     "rules": "has_attack_magic(state, player) and has_counter(state, player)",
                     "group": "Bosses"
                 },
