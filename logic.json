@@ -342,7 +342,7 @@
             "exits": [
                 {
                     "name": "Underground - After wind",
-                    "rules": "has_wind_or_skip(state, world)"
+                    "rules": true
                 }
             ],
             "locations": [
