@@ -219,7 +219,7 @@ def json_to_ap_python(file_path):
     locations_code.append("}\n")
 
     locations_code.append("location_name_to_id: Dict[str, int] "
-                          "= {name: base_id + index for index, name in enumerate(sorted(lwn_locations))}\n")
+                          "= {name: base_id + index for index, name in enumerate(sorted(lwn_locations, key=str.lower))}\n")
 
     for loc_group_name in location_group_map.keys():
         location_name_groups.append(f"    \"{loc_group_name}\": {{")
