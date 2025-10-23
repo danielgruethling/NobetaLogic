@@ -2,12 +2,7 @@
     "regions": [
         {
             "name": "Menu",
-            "exits": [
-                {
-                    "name": "Shrine - Start",
-                    "rules": true
-                }
-            ],
+            "exits": [],
             "locations": []
         },
         {

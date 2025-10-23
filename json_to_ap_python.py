@@ -70,8 +70,10 @@ def json_to_ap_python(file_path):
 
     # Generate regions.py
     regions_code = [
-        "from typing import Dict, Set",
-        "from BaseClasses import Region\n\n",
+        "from typing import Dict, Set, TYPE_CHECKING",
+        "from BaseClasses import Region\n",
+        "if TYPE_CHECKING:",
+        "    from . import LWNWorld\n\n",
         "class LWNRegion(Region):",
         "    game: str = \"Little Witch Nobeta\"\n\n",
     ]
@@ -184,17 +186,28 @@ def json_to_ap_python(file_path):
                 if 'group' in location:
                     location_group_map[location['group']].add(location['name'])
             locations_code.append("}\n")
-            append_locations_code.append(f"    for location_name in {region_to_normalized_locations(region)}:")
-            if region['name'] != "Abyss - Nonota":
-                append_locations_code.append(f"        location_id = location_name_to_id[location_name]")
-            else:
-                append_locations_code.append(f"        if location_name != \"Abyss - Nonota\":")
+            if region['name'] == "Shrine - Start" or region['name'] == "Shrine - After first magic switch" or region['name'] == "Shrine - Cat Room":
+                append_locations_code.append(f"    if world.options.starting_area == world.options.starting_area.option_shrine:")
+                append_locations_code.append(f"        for location_name in {region_to_normalized_locations(region)}:")
                 append_locations_code.append(f"            location_id = location_name_to_id[location_name]")
-                append_locations_code.append(f"        else:")
-                append_locations_code.append(f"            location_id = None")
-            append_locations_code.append(f"        group_name = {region_to_normalized_locations(region)}[location_name]")
-            append_locations_code.append(f"        region = world.multiworld.get_region(\"{region['name']}\", world.player)")
-            append_locations_code.append(f"        add_location_to_region(location_name, location_id, group_name, region, world)\n")
+                append_locations_code.append(
+                    f"            group_name = {region_to_normalized_locations(region)}[location_name]")
+                append_locations_code.append(
+                    f"            region = world.multiworld.get_region(\"{region['name']}\", world.player)")
+                append_locations_code.append(
+                    f"            add_location_to_region(location_name, location_id, group_name, region, world)\n")
+            else:
+                append_locations_code.append(f"    for location_name in {region_to_normalized_locations(region)}:")
+                if region['name'] != "Abyss - Nonota":
+                    append_locations_code.append(f"        location_id = location_name_to_id[location_name]")
+                else:
+                    append_locations_code.append(f"        if location_name != \"Abyss - Nonota\":")
+                    append_locations_code.append(f"            location_id = location_name_to_id[location_name]")
+                    append_locations_code.append(f"        else:")
+                    append_locations_code.append(f"            location_id = None")
+                append_locations_code.append(f"        group_name = {region_to_normalized_locations(region)}[location_name]")
+                append_locations_code.append(f"        region = world.multiworld.get_region(\"{region['name']}\", world.player)")
+                append_locations_code.append(f"        add_location_to_region(location_name, location_id, group_name, region, world)\n")
 
         lwn_region = f"    \"{region['name']}\": "
         if 'exits' in region and region['exits']:
@@ -232,7 +245,21 @@ def json_to_ap_python(file_path):
     locations_code.append('\n'.join(append_locations_code))
 
     regions_code.append('\n'.join(lwn_regions))
-    regions_code.append("}\n")
+    regions_code.append("}")
+
+    regions_code.append("\n\ndef set_start_region(world: \"LWNWorld\"):")
+    regions_code.append("    multiworld = world.multiworld")
+    regions_code.append("    player = world.player")
+    regions_code.append("    options = world.options\n")
+    regions_code.append("    menu_region = multiworld.get_region(\"Menu\", player)\n")
+    regions_code.append("    if options.starting_area.value == options.starting_area.option_shrine:")
+    regions_code.append("        menu_region.add_exits({\"Shrine - Start\"})")
+    regions_code.append("    elif options.starting_area.value == options.starting_area.option_underground:")
+    regions_code.append("        menu_region.add_exits({\"Underground - Start\"})")
+    regions_code.append("    elif options.starting_area.value == options.starting_area.option_lava_ruins:")
+    regions_code.append("        menu_region.add_exits({\"Lava Ruins - Start\"})")
+    regions_code.append("    elif options.starting_area.value == options.starting_area.option_dark_tunnel:")
+    regions_code.append("        menu_region.add_exits({\"Dark Tunnel - Start\"})")
 
     rules_code.append("\n\ndef set_location_rules(world: \"LWNWorld\") -> None:")
     rules_code.append("    multiworld = world.multiworld")
