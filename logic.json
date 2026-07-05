@@ -60,7 +60,7 @@
             "exits": [
                 {
                     "name": "Shrine - After first magic switch",
-                    "rules": "has_barrier(\"Shrine Second Magic Barrier\")"
+                    "rules": "has_barrier(\"Shrine Second Magic Barrier\") & (has_barrier(\"Shrine Meet Cat Magic Barrier\") | barrier_vanilla)"
                 },
                 {
                     "name": "Shrine - Armor Hall",
@@ -95,7 +95,7 @@
                 },
                 {
                     "name": "Shrine - Cat Room",
-                    "rules": "has_barrier(\"Shrine Meet Cat Magic Barrier\")"
+                    "rules": "True_()"
                 },
                 {
                     "name": "Underground - Start",
@@ -154,19 +154,26 @@
             "name": "Secret passage - Start",
             "exits": [
                 {
-                    "name": "Shrine - Armor Hall",
-                    "rules": "has_barrier(\"Secret Passage Entrance Magic Barrier\")"
-                },
-                {
-                    "name": "Secret passage - After first fire barrier",
-                    "rules": "has_barrier(\"Secret Passage First Fire Barrier\") | (has_fire_or_thunder & barrier_vanilla)"
+                    "name": "Secret passage - First fire barrier switch room",
+                    "rules": "True_()"
                 }
             ],
             "locations": [
                 {
                     "name": "Secret Passage - 35. Dwarven Metalwork in pot after first drop",
                     "group": "Lore"
-                },
+                }
+            ]
+        },
+        {
+            "name": "Secret passage - First fire barrier switch room",
+            "exits": [
+                {
+                    "name": "Secret passage - After first fire barrier",
+                    "rules": "has_barrier(\"Secret Passage First Fire Barrier\") | (has_fire_or_thunder & barrier_vanilla)"
+                }
+            ],
+            "locations": [
                 {
                     "name": "Secret Passage - 36. High Elf's Mana Ring in pot beside destructible wall",
                     "group": "Lore"
@@ -190,16 +197,12 @@
             "name": "Secret passage - After first fire barrier",
             "exits": [
                 {
-                    "name": "Secret passage - Start",
+                    "name": "Secret passage - First fire barrier switch room",
                     "rules": "has_barrier(\"Secret Passage First Fire Barrier\")"
                 },
                 {
-                    "name": "Secret Passage - Dark Tunnel shortcut",
-                    "rules": "has_gate(\"Secret Passage Dark Tunnel Shortcut Gate\")"
-                },
-                {
-                    "name": "Shrine - Armor Hall",
-                    "rules": "has_gate(\"Shrine Secret Area Shortcut Gate\") | gate_vanilla"
+                    "name": "Secret passage - After secret passage gate",
+                    "rules": "True_()"
                 },
                 {
                     "name": "Secret Passage - Before Enraged Armor",
@@ -215,6 +218,29 @@
                     "name": "Secret Passage - Wind spell chest in alcove during fall",
                     "group": "Chest"
                 },
+                {
+                    "name": "Secret Passage - 38. Dark Elf's Ear Sample from pot at magic barrier",
+                    "group": "Lore"
+                }
+            ]
+        },
+        {
+            "name": "Secret passage - After secret passage gate",
+            "exits": [
+                {
+                    "name": "Secret passage - After first fire barrier",
+                    "rules": "has_fire_or_thunder"
+                },
+                {
+                    "name": "Secret Passage - Dark Tunnel shortcut",
+                    "rules": "has_gate(\"Secret Passage Dark Tunnel Shortcut Gate\")"
+                },
+                {
+                    "name": "Shrine - Armor Hall",
+                    "rules": "has_gate(\"Shrine Secret Area Shortcut Gate\") | gate_vanilla"
+                }
+            ],
+            "locations": [
                 {
                     "name": "Secret Passage - Ice spell chest behind breakable wall after fall",
                     "group": "Chest"
@@ -235,10 +261,6 @@
                     "name": "Secret Passage - Second fire barrier magic switch",
                     "rules": "has_fire_or_thunder",
                     "group": "Barrier"
-                },
-                {
-                    "name": "Secret Passage - 38. Dark Elf's Ear Sample from pot at magic barrier",
-                    "group": "Lore"
                 }
             ]
         },
@@ -859,7 +881,7 @@
             "locations": [
                 {
                     "name": "Lava Ruins - Jumping puzzle arcane chest at moving ring gauntlet",
-                    "rules": "Has(\"Wind\")",
+                    "rules": "(has_barrier(\"Lava Ruins Moving Ring\") | barrier_vanilla) & Has(\"Wind\")",
                     "group": "Chest"
                 },
                 {
@@ -979,7 +1001,7 @@
                 },
                 {
                     "name": "Dark Tunnel - After first gate",
-                    "rules": "has_gate(\"Dark Tunnel First Gate\") | gate_vanilla | (Has(\"Wind\") & [OptionFilter(SkipsInLogic, \"Dark Tunnel Hat Skip\", \"contains\")])"
+                    "rules": "Has(\"Wind\") & [OptionFilter(SkipsInLogic, \"Dark Tunnel Hat Skip\", \"contains\")]"
                 }
             ],
             "locations": [
