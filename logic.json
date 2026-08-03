@@ -725,7 +725,7 @@
             "exits": [
                 {
                     "name": "Lava Ruins - After magic platforms",
-                    "rules": "has_barrier(\"Lava Ruins Scissor Enemy Lift\") | (barrier_vanilla & Has(\"Arcane\"))"
+                    "rules": "has_barrier(\"Lava Ruins Scissor Enemy Lift\") | barrier_vanilla"
                 },
                 {
                     "name": "Lava Ruins - After scissor enemy barrier",
@@ -733,7 +733,7 @@
                 },
                 {
                     "name": "Lava Ruins - Lift Magic Switch Room",
-                    "rules": "has_barrier(\"Lava Ruins Scissor Enemy Barrier\") | barrier_vanilla"
+                    "rules": "has_barrier(\"Lava Ruins Scissor Enemy Barrier\") | barrier_vanilla | HasAny(\"Arcane\", \"Thunder\")"
                 },
                 {
                     "name": "Lava Ruins - Scissor Enemy Battle",
