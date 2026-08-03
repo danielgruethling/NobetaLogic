@@ -605,7 +605,7 @@
             ],
             "locations": [
                 {
-                    "name": "Underground - Defeat tania",
+                    "name": "Underground - Tania",
                     "rules": "(boss_souls_vanilla | Has(\"Tania Soul\")) & (boss_req_none | (boss_req_absorption & Has(\"Mana Absorption\")) | (boss_req_normal & HasGroup(\"Attack Magics\") & Has(\"Mana Absorption\")) | (boss_req_easy & HasGroup(\"Attack Magics\", 3) & Has(\"Mana Absorption\")))",
                     "group": "Bosses"
                 },
