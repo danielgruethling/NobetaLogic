@@ -288,32 +288,32 @@
             "exits": [
                 {
                     "name": "Secret Passage - Boss Shortcut",
-                    "rules": "has_barrier(\"Defeat Enraged Armor Barrier\") | ((boss_req_none | (boss_req_absorption & Has(\"Mana Absorption\")) | (boss_req_normal & HasGroup(\"Attack Magics\") & Has(\"Mana Absorption\")) | (boss_req_easy & HasGroup(\"Attack Magics\", 5) & Has(\"Mana Absorption\"))) & barrier_vanilla)"
+                    "rules": "has_barrier(\"Defeat Enraged Armor Barrier\") | ((boss_req_none | (boss_req_absorption & Has(\"Mana Absorption\")) | (boss_req_normal & HasGroup(\"Attack Magics\") & Has(\"Mana Absorption\")) | (boss_req_easy & HasGroupUnique(\"Attack Magics\", 3) & Has(\"Mana Absorption\"))) & barrier_vanilla)"
                 },
                 {
                     "name": "Secret Passage - Before Enraged Armor",
-                    "rules": "skip_boss_enabled | ((boss_souls_vanilla | Has(\"Enraged Armor Soul\")) & (boss_req_none | (boss_req_absorption & Has(\"Mana Absorption\")) | (boss_req_normal & HasGroup(\"Attack Magics\") & Has(\"Mana Absorption\")) | (boss_req_easy & HasGroup(\"Attack Magics\", 5) & Has(\"Mana Absorption\"))))"
+                    "rules": "skip_boss_enabled | ((boss_souls_vanilla | Has(\"Enraged Armor Soul\")) & (boss_req_none | (boss_req_absorption & Has(\"Mana Absorption\")) | (boss_req_normal & HasGroup(\"Attack Magics\") & Has(\"Mana Absorption\")) | (boss_req_easy & HasGroupUnique(\"Attack Magics\", 3) & Has(\"Mana Absorption\"))))"
                 }
             ],
             "locations": [
                 {
                     "name": "Secret Passage - Enraged Armor",
-                    "rules": "(boss_souls_vanilla | Has(\"Enraged Armor Soul\")) & (boss_req_none | (boss_req_absorption & Has(\"Mana Absorption\")) | (boss_req_normal & HasGroup(\"Attack Magics\") & Has(\"Mana Absorption\")) | (boss_req_easy & HasGroup(\"Attack Magics\", 5) & Has(\"Mana Absorption\")))",
+                    "rules": "(boss_souls_vanilla | Has(\"Enraged Armor Soul\")) & (boss_req_none | (boss_req_absorption & Has(\"Mana Absorption\")) | (boss_req_normal & HasGroup(\"Attack Magics\") & Has(\"Mana Absorption\")) | (boss_req_easy & HasGroupUnique(\"Attack Magics\", 3) & Has(\"Mana Absorption\")))",
                     "group": "Bosses"
                 },
                 {
                     "name": "Secret Passage - 56. Knight Kingdom Crown from Enraged Armor",
-                    "rules": "(boss_souls_vanilla | Has(\"Enraged Armor Soul\")) & (boss_req_none | (boss_req_absorption & Has(\"Mana Absorption\")) | (boss_req_normal & HasGroup(\"Attack Magics\") & Has(\"Mana Absorption\")) | (boss_req_easy & HasGroup(\"Attack Magics\", 5) & Has(\"Mana Absorption\")))",
+                    "rules": "(boss_souls_vanilla | Has(\"Enraged Armor Soul\")) & (boss_req_none | (boss_req_absorption & Has(\"Mana Absorption\")) | (boss_req_normal & HasGroup(\"Attack Magics\") & Has(\"Mana Absorption\")) | (boss_req_easy & HasGroupUnique(\"Attack Magics\", 3) & Has(\"Mana Absorption\")))",
                     "group": "Lore"
                 },
                 {
                     "name": "Secret Passage - Teleport from Enraged Armor",
-                    "rules": "(boss_souls_vanilla | Has(\"Enraged Armor Soul\")) & (boss_req_none | (boss_req_absorption & Has(\"Mana Absorption\")) | (boss_req_normal & HasGroup(\"Attack Magics\") & Has(\"Mana Absorption\")) | (boss_req_easy & HasGroup(\"Attack Magics\", 5) & Has(\"Mana Absorption\")))",
+                    "rules": "(boss_souls_vanilla | Has(\"Enraged Armor Soul\")) & (boss_req_none | (boss_req_absorption & Has(\"Mana Absorption\")) | (boss_req_normal & HasGroup(\"Attack Magics\") & Has(\"Mana Absorption\")) | (boss_req_easy & HasGroupUnique(\"Attack Magics\", 3) & Has(\"Mana Absorption\")))",
                     "group": "Teleport"
                 },
                 {
                     "name": "Secret Passage - Defeat Enraged Armor barrier",
-                    "rules": "(boss_souls_vanilla | Has(\"Enraged Armor Soul\")) & (boss_req_none | (boss_req_absorption & Has(\"Mana Absorption\")) | (boss_req_normal & HasGroup(\"Attack Magics\") & Has(\"Mana Absorption\")) | (boss_req_easy & HasGroup(\"Attack Magics\", 5) & Has(\"Mana Absorption\")))",
+                    "rules": "(boss_souls_vanilla | Has(\"Enraged Armor Soul\")) & (boss_req_none | (boss_req_absorption & Has(\"Mana Absorption\")) | (boss_req_normal & HasGroup(\"Attack Magics\") & Has(\"Mana Absorption\")) | (boss_req_easy & HasGroupUnique(\"Attack Magics\", 3) & Has(\"Mana Absorption\")))",
                     "group": "Barrier"
                 }
             ]
@@ -600,18 +600,18 @@
                 },
                 {
                     "name": "Lava Ruins - Start",
-                    "rules": "(has_barrier(\"Underground Tania Arena Barrier\") | barrier_vanilla) & (skip_boss_enabled | ((boss_souls_vanilla | Has(\"Tania Soul\")) & (boss_req_none | (boss_req_absorption & Has(\"Mana Absorption\")) | (boss_req_normal & HasGroup(\"Attack Magics\") & Has(\"Mana Absorption\")) | (boss_req_easy & HasGroup(\"Attack Magics\", 3) & Has(\"Mana Absorption\")))))"
+                    "rules": "(has_barrier(\"Underground Tania Arena Barrier\") | barrier_vanilla) & (skip_boss_enabled | ((boss_souls_vanilla | Has(\"Tania Soul\")) & (boss_req_none | (boss_req_absorption & Has(\"Mana Absorption\")) | (boss_req_normal & HasGroup(\"Attack Magics\") & Has(\"Mana Absorption\")) | (boss_req_easy & HasGroupUnique(\"Attack Magics\", 2) & Has(\"Mana Absorption\")))))"
                 }
             ],
             "locations": [
                 {
                     "name": "Underground - Tania",
-                    "rules": "(boss_souls_vanilla | Has(\"Tania Soul\")) & (boss_req_none | (boss_req_absorption & Has(\"Mana Absorption\")) | (boss_req_normal & HasGroup(\"Attack Magics\") & Has(\"Mana Absorption\")) | (boss_req_easy & HasGroup(\"Attack Magics\", 3) & Has(\"Mana Absorption\")))",
+                    "rules": "(boss_souls_vanilla | Has(\"Tania Soul\")) & (boss_req_none | (boss_req_absorption & Has(\"Mana Absorption\")) | (boss_req_normal & HasGroup(\"Attack Magics\") & Has(\"Mana Absorption\")) | (boss_req_easy & HasGroupUnique(\"Attack Magics\", 2) & Has(\"Mana Absorption\")))",
                     "group": "Bosses"
                 },
                 {
                     "name": "Underground - Tania boss arena barrier",
-                    "rules": "(boss_souls_vanilla | Has(\"Tania Soul\")) & (boss_req_none | (boss_req_absorption & Has(\"Mana Absorption\")) | (boss_req_normal & HasGroup(\"Attack Magics\") & Has(\"Mana Absorption\")) | (boss_req_easy & HasGroup(\"Attack Magics\", 3) & Has(\"Mana Absorption\")))",
+                    "rules": "(boss_souls_vanilla | Has(\"Tania Soul\")) & (boss_req_none | (boss_req_absorption & Has(\"Mana Absorption\")) | (boss_req_normal & HasGroup(\"Attack Magics\") & Has(\"Mana Absorption\")) | (boss_req_easy & HasGroupUnique(\"Attack Magics\", 2) & Has(\"Mana Absorption\")))",
                     "group": "Barrier"
                 },
                 {
@@ -620,7 +620,7 @@
                 },
                 {
                     "name": "Underground - 98. Lost Maiden's Soul Shard from Tania",
-                    "rules": "(boss_souls_vanilla | Has(\"Tania Soul\")) & (boss_req_none | (boss_req_absorption & Has(\"Mana Absorption\")) | (boss_req_normal & HasGroup(\"Attack Magics\") & Has(\"Mana Absorption\")) | (boss_req_easy & HasGroup(\"Attack Magics\", 3) & Has(\"Mana Absorption\")))",
+                    "rules": "(boss_souls_vanilla | Has(\"Tania Soul\")) & (boss_req_none | (boss_req_absorption & Has(\"Mana Absorption\")) | (boss_req_normal & HasGroup(\"Attack Magics\") & Has(\"Mana Absorption\")) | (boss_req_easy & HasGroupUnique(\"Attack Magics\", 2) & Has(\"Mana Absorption\")))",
                     "group": "Lore"
                 }
             ]
@@ -907,33 +907,33 @@
                 },
                 {
                     "name": "Lava Ruins - Monica warp",
-                    "rules": "(has_barrier(\"Lava Ruins Monica Arena Barrier\") | barrier_vanilla) & (boss_souls_vanilla | Has(\"Monica Soul\")) & (boss_req_none | (boss_req_absorption & Has(\"Mana Absorption\")) | (boss_req_normal & HasGroup(\"Attack Magics\") & Has(\"Mana Absorption\")) | (boss_req_easy & HasGroup(\"Attack Magics\", 4) & Has(\"Mana Absorption\")))"
+                    "rules": "(has_barrier(\"Lava Ruins Monica Arena Barrier\") | barrier_vanilla) & (boss_souls_vanilla | Has(\"Monica Soul\")) & (boss_req_none | (boss_req_absorption & Has(\"Mana Absorption\")) | (boss_req_normal & HasGroup(\"Attack Magics\") & Has(\"Mana Absorption\")) | (boss_req_easy & HasGroupUnique(\"Attack Magics\", 2) & Has(\"Mana Absorption\")))"
                 }
             ],
             "locations": [
                 {
                     "name": "Lava Ruins - Monica",
-                    "rules": "(boss_souls_vanilla | Has(\"Monica Soul\")) & (boss_req_none | (boss_req_absorption & Has(\"Mana Absorption\")) | (boss_req_normal & HasGroup(\"Attack Magics\") & Has(\"Mana Absorption\")) | (boss_req_easy & HasGroup(\"Attack Magics\", 4) & Has(\"Mana Absorption\")))",
+                    "rules": "(boss_souls_vanilla | Has(\"Monica Soul\")) & (boss_req_none | (boss_req_absorption & Has(\"Mana Absorption\")) | (boss_req_normal & HasGroup(\"Attack Magics\") & Has(\"Mana Absorption\")) | (boss_req_easy & HasGroupUnique(\"Attack Magics\", 2) & Has(\"Mana Absorption\")))",
                     "group": "Bosses"
                 },
                 {
                     "name": "Lava Ruins - Monica boss arena barrier",
-                    "rules": "(boss_souls_vanilla | Has(\"Monica Soul\")) & (boss_req_none | (boss_req_absorption & Has(\"Mana Absorption\")) | (boss_req_normal & HasGroup(\"Attack Magics\") & Has(\"Mana Absorption\")) | (boss_req_easy & HasGroup(\"Attack Magics\", 4) & Has(\"Mana Absorption\")))",
+                    "rules": "(boss_souls_vanilla | Has(\"Monica Soul\")) & (boss_req_none | (boss_req_absorption & Has(\"Mana Absorption\")) | (boss_req_normal & HasGroup(\"Attack Magics\") & Has(\"Mana Absorption\")) | (boss_req_easy & HasGroupUnique(\"Attack Magics\", 2) & Has(\"Mana Absorption\")))",
                     "group": "Barrier"
                 },
                 {
                     "name": "Lava Ruins - 34. Bestian Ear from Monica",
-                    "rules": "(boss_souls_vanilla | Has(\"Monica Soul\")) & (boss_req_none | (boss_req_absorption & Has(\"Mana Absorption\")) | (boss_req_normal & HasGroup(\"Attack Magics\") & Has(\"Mana Absorption\")) | (boss_req_easy & HasGroup(\"Attack Magics\", 4) & Has(\"Mana Absorption\")))",
+                    "rules": "(boss_souls_vanilla | Has(\"Monica Soul\")) & (boss_req_none | (boss_req_absorption & Has(\"Mana Absorption\")) | (boss_req_normal & HasGroup(\"Attack Magics\") & Has(\"Mana Absorption\")) | (boss_req_easy & HasGroupUnique(\"Attack Magics\", 2) & Has(\"Mana Absorption\")))",
                     "group": "Lore"
                 },
                 {
                     "name": "Lava Ruins - 33. Bestian Palm from Monica",
-                    "rules": "(boss_souls_vanilla | Has(\"Monica Soul\")) & (boss_req_none | (boss_req_absorption & Has(\"Mana Absorption\")) | (boss_req_normal & HasGroup(\"Attack Magics\") & Has(\"Mana Absorption\")) | (boss_req_easy & HasGroup(\"Attack Magics\", 4) & Has(\"Mana Absorption\")))",
+                    "rules": "(boss_souls_vanilla | Has(\"Monica Soul\")) & (boss_req_none | (boss_req_absorption & Has(\"Mana Absorption\")) | (boss_req_normal & HasGroup(\"Attack Magics\") & Has(\"Mana Absorption\")) | (boss_req_easy & HasGroupUnique(\"Attack Magics\", 2) & Has(\"Mana Absorption\")))",
                     "group": "Lore"
                 },
                 {
                     "name": "Lava Ruins - 99. Child's Soul Shard from Monica",
-                    "rules": "(boss_souls_vanilla | Has(\"Monica Soul\")) & (boss_req_none | (boss_req_absorption & Has(\"Mana Absorption\")) | (boss_req_normal & HasGroup(\"Attack Magics\") & Has(\"Mana Absorption\")) | (boss_req_easy & HasGroup(\"Attack Magics\", 4) & Has(\"Mana Absorption\")))",
+                    "rules": "(boss_souls_vanilla | Has(\"Monica Soul\")) & (boss_req_none | (boss_req_absorption & Has(\"Mana Absorption\")) | (boss_req_normal & HasGroup(\"Attack Magics\") & Has(\"Mana Absorption\")) | (boss_req_easy & HasGroupUnique(\"Attack Magics\", 2) & Has(\"Mana Absorption\")))",
                     "group": "Lore"
                 }
             ]
@@ -1246,7 +1246,7 @@
             "exits": [
                 {
                     "name": "Spirit Realm - Start",
-                    "rules": "skip_boss_enabled | ((boss_souls_vanilla | Has(\"Vanessa Soul\")) & (boss_req_none | (boss_req_absorption & Has(\"Mana Absorption\")) | (boss_req_normal & HasGroup(\"Attack Magics\") & Has(\"Mana Absorption\")) | (boss_req_easy & HasGroup(\"Attack Magics\", 5) & Has(\"Mana Absorption\"))))"
+                    "rules": "skip_boss_enabled | ((boss_souls_vanilla | Has(\"Vanessa Soul\")) & (boss_req_none | (boss_req_absorption & Has(\"Mana Absorption\")) | (boss_req_normal & HasGroup(\"Attack Magics\") & Has(\"Mana Absorption\")) | (boss_req_easy & HasGroupUnique(\"Attack Magics\", 2) & Has(\"Mana Absorption\"))))"
                 },
                 {
                     "name": "Secret Passage - Dark Tunnel shortcut",
@@ -1291,22 +1291,22 @@
                 },
                 {
                     "name": "Dark Tunnel - Vanessa",
-                    "rules": "(boss_souls_vanilla | Has(\"Vanessa Soul\")) & (boss_req_none | (boss_req_absorption & Has(\"Mana Absorption\")) | (boss_req_normal & HasGroup(\"Attack Magics\") & Has(\"Mana Absorption\")) | (boss_req_easy & HasGroup(\"Attack Magics\", 5) & Has(\"Mana Absorption\")))",
+                    "rules": "(boss_souls_vanilla | Has(\"Vanessa Soul\")) & (boss_req_none | (boss_req_absorption & Has(\"Mana Absorption\")) | (boss_req_normal & HasGroup(\"Attack Magics\") & Has(\"Mana Absorption\")) | (boss_req_easy & HasGroupUnique(\"Attack Magics\", 2) & Has(\"Mana Absorption\")))",
                     "group": "Bosses"
                 },
                 {
                     "name": "Dark Tunnel - 100. King's Final Honor from Vanessa",
-                    "rules": "(boss_souls_vanilla | Has(\"Vanessa Soul\")) & (boss_req_none | (boss_req_absorption & Has(\"Mana Absorption\")) | (boss_req_normal & HasGroup(\"Attack Magics\") & Has(\"Mana Absorption\")) | (boss_req_easy & HasGroup(\"Attack Magics\", 5) & Has(\"Mana Absorption\")))",
+                    "rules": "(boss_souls_vanilla | Has(\"Vanessa Soul\")) & (boss_req_none | (boss_req_absorption & Has(\"Mana Absorption\")) | (boss_req_normal & HasGroup(\"Attack Magics\") & Has(\"Mana Absorption\")) | (boss_req_easy & HasGroupUnique(\"Attack Magics\", 2) & Has(\"Mana Absorption\")))",
                     "group": "Lore"
                 },
                 {
                     "name": "Dark Tunnel - 78. Ancient Throne Rune from Vanessa",
-                    "rules": "(boss_souls_vanilla | Has(\"Vanessa Soul\")) & (boss_req_none | (boss_req_absorption & Has(\"Mana Absorption\")) | (boss_req_normal & HasGroup(\"Attack Magics\") & Has(\"Mana Absorption\")) | (boss_req_easy & HasGroup(\"Attack Magics\", 5) & Has(\"Mana Absorption\")))",
+                    "rules": "(boss_souls_vanilla | Has(\"Vanessa Soul\")) & (boss_req_none | (boss_req_absorption & Has(\"Mana Absorption\")) | (boss_req_normal & HasGroup(\"Attack Magics\") & Has(\"Mana Absorption\")) | (boss_req_easy & HasGroupUnique(\"Attack Magics\", 2) & Has(\"Mana Absorption\")))",
                     "group": "Lore"
                 },
                 {
                     "name": "Dark Tunnel - 77. The Throne from Vanessa",
-                    "rules": "(boss_souls_vanilla | Has(\"Vanessa Soul\")) & (boss_req_none | (boss_req_absorption & Has(\"Mana Absorption\")) | (boss_req_normal & HasGroup(\"Attack Magics\") & Has(\"Mana Absorption\")) | (boss_req_easy & HasGroup(\"Attack Magics\", 5) & Has(\"Mana Absorption\")))",
+                    "rules": "(boss_souls_vanilla | Has(\"Vanessa Soul\")) & (boss_req_none | (boss_req_absorption & Has(\"Mana Absorption\")) | (boss_req_normal & HasGroup(\"Attack Magics\") & Has(\"Mana Absorption\")) | (boss_req_easy & HasGroupUnique(\"Attack Magics\", 2) & Has(\"Mana Absorption\")))",
                     "group": "Lore"
                 }
             ]
@@ -1445,7 +1445,7 @@
             "exits": [
                 {
                     "name": "Spirit Realm - After first Seal",
-                    "rules": "has_barrier(\"Spirit Realm First Seal Magic Barrier\") | ((boss_req_none | (boss_req_absorption & Has(\"Mana Absorption\")) | (boss_req_normal & HasGroup(\"Attack Magics\") & Has(\"Mana Absorption\")) | (boss_req_easy & HasGroup(\"Attack Magics\", 5) & Has(\"Mana Absorption\"))) & barrier_vanilla)"
+                    "rules": "has_barrier(\"Spirit Realm First Seal Magic Barrier\") | ((boss_req_none | (boss_req_absorption & Has(\"Mana Absorption\")) | (boss_req_normal & HasGroup(\"Attack Magics\") & Has(\"Mana Absorption\")) | (boss_req_easy & HasGroupUnique(\"Attack Magics\", 3) & Has(\"Mana Absorption\"))) & barrier_vanilla)"
                 }
             ],
             "locations": [
@@ -1467,7 +1467,7 @@
                 },
                 {
                     "name": "Spirit Realm - First Seal magic barrier",
-                    "rules": "boss_req_none | (boss_req_absorption & Has(\"Mana Absorption\")) | (boss_req_normal & HasGroup(\"Attack Magics\") & Has(\"Mana Absorption\")) | (boss_req_easy & HasGroup(\"Attack Magics\", 5) & Has(\"Mana Absorption\"))",
+                    "rules": "boss_req_none | (boss_req_absorption & Has(\"Mana Absorption\")) | (boss_req_normal & HasGroup(\"Attack Magics\") & Has(\"Mana Absorption\")) | (boss_req_easy & HasGroupUnique(\"Attack Magics\", 3) & Has(\"Mana Absorption\"))",
                     "group": "Barrier"
                 }
             ]
@@ -1481,7 +1481,7 @@
                 },
                 {
                     "name": "Spirit Realm - After second Seal",
-                    "rules": "has_barrier(\"Spirit Realm Second Seal Magic Barrier\") | (Has(\"Wind\") & [OptionFilter(SkipsInLogic, \"Spirit Realm Seal Barrier Skip\", \"contains\")]) | ((boss_req_none | (boss_req_absorption & Has(\"Mana Absorption\")) | (boss_req_normal & HasGroup(\"Attack Magics\") & Has(\"Mana Absorption\")) | (boss_req_easy & HasGroup(\"Attack Magics\", 5) & Has(\"Mana Absorption\"))) & barrier_vanilla)"
+                    "rules": "has_barrier(\"Spirit Realm Second Seal Magic Barrier\") | (Has(\"Wind\") & [OptionFilter(SkipsInLogic, \"Spirit Realm Seal Barrier Skip\", \"contains\")]) | ((boss_req_none | (boss_req_absorption & Has(\"Mana Absorption\")) | (boss_req_normal & HasGroup(\"Attack Magics\") & Has(\"Mana Absorption\")) | (boss_req_easy & HasGroupUnique(\"Attack Magics\", 3) & Has(\"Mana Absorption\"))) & barrier_vanilla)"
                 }
             ],
             "locations": [
@@ -1495,7 +1495,7 @@
                 },
                 {
                     "name": "Spirit Realm - Second Seal magic barrier",
-                    "rules": "boss_req_none | (boss_req_absorption & Has(\"Mana Absorption\")) | (boss_req_normal & HasGroup(\"Attack Magics\") & Has(\"Mana Absorption\")) | (boss_req_easy & HasGroup(\"Attack Magics\", 5) & Has(\"Mana Absorption\"))",
+                    "rules": "boss_req_none | (boss_req_absorption & Has(\"Mana Absorption\")) | (boss_req_normal & HasGroup(\"Attack Magics\") & Has(\"Mana Absorption\")) | (boss_req_easy & HasGroupUnique(\"Attack Magics\", 3) & Has(\"Mana Absorption\"))",
                     "group": "Barrier"
                 }
             ]
@@ -1583,7 +1583,7 @@
                 },
                 {
                     "name": "Abyss",
-                    "rules": "skip_boss_enabled | ((boss_souls_vanilla | Has(\"Vanessa V2 Soul\")) & (boss_req_none | (boss_req_absorption & Has(\"Mana Absorption\")) | (boss_req_normal & HasGroup(\"Attack Magics\") & Has(\"Mana Absorption\")) | (boss_req_easy & HasGroup(\"Attack Magics\", 5) & Has(\"Mana Absorption\"))))"
+                    "rules": "skip_boss_enabled | ((boss_souls_vanilla | Has(\"Vanessa V2 Soul\")) & (boss_req_none | (boss_req_absorption & Has(\"Mana Absorption\")) | (boss_req_normal & HasGroup(\"Attack Magics\") & Has(\"Mana Absorption\")) | (boss_req_easy & HasGroupUnique(\"Attack Magics\", 3) & Has(\"Mana Absorption\"))))"
                 }
             ],
             "locations": [
@@ -1601,17 +1601,17 @@
                 },
                 {
                     "name": "Spirit Realm - Vanessa V2",
-                    "rules": "(boss_souls_vanilla | Has(\"Vanessa V2 Soul\")) & (boss_req_none | (boss_req_absorption & Has(\"Mana Absorption\")) | (boss_req_normal & HasGroup(\"Attack Magics\") & Has(\"Mana Absorption\")) | (boss_req_easy & HasGroup(\"Attack Magics\", 5) & Has(\"Mana Absorption\")))",
+                    "rules": "(boss_souls_vanilla | Has(\"Vanessa V2 Soul\")) & (boss_req_none | (boss_req_absorption & Has(\"Mana Absorption\")) | (boss_req_normal & HasGroup(\"Attack Magics\") & Has(\"Mana Absorption\")) | (boss_req_easy & HasGroupUnique(\"Attack Magics\", 3) & Has(\"Mana Absorption\")))",
                     "group": "Bosses"
                 },
                 {
                     "name": "Spirit Realm - 101. Proud King's Crafted Soul Shard from Vanessa V2",
-                    "rules": "(boss_souls_vanilla | Has(\"Vanessa V2 Soul\")) & (boss_req_none | (boss_req_absorption & Has(\"Mana Absorption\")) | (boss_req_normal & HasGroup(\"Attack Magics\") & Has(\"Mana Absorption\")) | (boss_req_easy & HasGroup(\"Attack Magics\", 5) & Has(\"Mana Absorption\")))",
+                    "rules": "(boss_souls_vanilla | Has(\"Vanessa V2 Soul\")) & (boss_req_none | (boss_req_absorption & Has(\"Mana Absorption\")) | (boss_req_normal & HasGroup(\"Attack Magics\") & Has(\"Mana Absorption\")) | (boss_req_easy & HasGroupUnique(\"Attack Magics\", 3) & Has(\"Mana Absorption\")))",
                     "group": "Lore"
                 },
                 {
                     "name": "Spirit Realm - Thunder spell from Vanessa V2",
-                    "rules": "(boss_souls_vanilla | Has(\"Vanessa V2 Soul\")) & (boss_req_none | (boss_req_absorption & Has(\"Mana Absorption\")) | (boss_req_normal & HasGroup(\"Attack Magics\") & Has(\"Mana Absorption\")) | (boss_req_easy & HasGroup(\"Attack Magics\", 5) & Has(\"Mana Absorption\")))",
+                    "rules": "(boss_souls_vanilla | Has(\"Vanessa V2 Soul\")) & (boss_req_none | (boss_req_absorption & Has(\"Mana Absorption\")) | (boss_req_normal & HasGroup(\"Attack Magics\") & Has(\"Mana Absorption\")) | (boss_req_easy & HasGroupUnique(\"Attack Magics\", 3) & Has(\"Mana Absorption\")))",
                     "group": "Item"
                 }
             ]
@@ -1915,12 +1915,12 @@
             "locations": [
                 {
                     "name": "Abyss - 102. Lost Maiden's Crafted Soul Shard from Nonota",
-                    "rules": "has_goal_requirements & (boss_req_none | (boss_req_absorption & Has(\"Mana Absorption\")) | (boss_req_normal & HasGroup(\"Attack Magics\") & Has(\"Mana Absorption\")) | (boss_req_easy & HasGroup(\"Attack Magics\", 7) & Has(\"Mana Absorption\")))",
+                    "rules": "has_goal_requirements & (boss_req_none | (boss_req_absorption & Has(\"Mana Absorption\")) | (boss_req_normal & HasGroup(\"Attack Magics\") & Has(\"Mana Absorption\")) | (boss_req_easy & HasGroupUnique(\"Attack Magics\", 4) & Has(\"Mana Absorption\")))",
                     "group": "Lore"
                 },
                 {
                     "name": "Abyss - Nonota",
-                    "rules": "has_goal_requirements & (boss_req_none | (boss_req_absorption & Has(\"Mana Absorption\")) | (boss_req_normal & HasGroup(\"Attack Magics\") & Has(\"Mana Absorption\")) | (boss_req_easy & HasGroup(\"Attack Magics\", 7) & Has(\"Mana Absorption\")))",
+                    "rules": "has_goal_requirements & (boss_req_none | (boss_req_absorption & Has(\"Mana Absorption\")) | (boss_req_normal & HasGroup(\"Attack Magics\") & Has(\"Mana Absorption\")) | (boss_req_easy & HasGroupUnique(\"Attack Magics\", 4) & Has(\"Mana Absorption\")))",
                     "group": "Event"
                 }
             ]
