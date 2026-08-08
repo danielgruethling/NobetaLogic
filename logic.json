@@ -82,7 +82,7 @@
                     "rules": "has_barrier(\"Secret Passage Entrance Magic Barrier\") | (has_fire_or_thunder & barrier_vanilla)"
                 },
                 {
-                    "name": "Secret passage - After first fire barrier",
+                    "name": "Secret passage - After secret passage gate",
                     "rules": "has_gate(\"Shrine Secret Area Shortcut Gate\")"
                 },
                 {
@@ -1078,7 +1078,6 @@
                 },
                 {
                     "name": "Dark Tunnel - 45. Golden Coin from first mimic",
-                    "rules": "Has(\"Fire\")",
                     "group": "Lore"
                 },
                 {
@@ -1145,12 +1144,10 @@
             "locations": [
                 {
                     "name": "Dark Tunnel - 48. Chief's Skull from right mimic in mimic room",
-                    "rules": "Has(\"Fire\")",
                     "group": "Lore"
                 },
                 {
                     "name": "Dark Tunnel - 49. Chief's Skull from straight mimic in mimic room",
-                    "rules": "Has(\"Fire\")",
                     "group": "Lore"
                 },
                 {
@@ -1678,7 +1675,7 @@
                 },
                 {
                     "name": "Abyss - Giant maid barrier",
-                    "rules": "HasGroup(\"Attack Magics\")",
+                    "rules": "HasAny(\"Arcane\", \"Thunder\")",
                     "group": "Barrier"
                 },
                 {
